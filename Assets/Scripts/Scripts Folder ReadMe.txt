@@ -1,0 +1,2 @@
+This folder is for Jacob and I only. No artists should be putting anything in here ever. If you are curious about the code
+that's fine, you can read it, but nothing again nothing goes in here that isn't put here by the programmers.

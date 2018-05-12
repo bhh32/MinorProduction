@@ -1,0 +1,2 @@
+This folder is for the materials of the Artist's models. Programmers are not to touch these. Artists, if you need help putting materials on
+a model let Bryan or Jupiter know, we'll figure it out together on your computer.

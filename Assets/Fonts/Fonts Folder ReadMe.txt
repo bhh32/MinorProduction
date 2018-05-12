@@ -1,0 +1,1 @@
+Place fonts for the game in this folder.
