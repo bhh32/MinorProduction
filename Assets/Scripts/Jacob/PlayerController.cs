@@ -5,11 +5,22 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour {
 
+    //Creating Instance for the player controller
+    #region singleton
+    public static PlayerController instance;
+
+    //setting instance
+    void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
     //Player NavMesh
-    private NavMeshAgent agent;
+    private static NavMeshAgent agent;
 
     //Gets NavMesh
-	void Awake()
+	void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
@@ -28,4 +39,10 @@ public class PlayerController : MonoBehaviour {
             }
         }
 	}
+
+    // For use with Walk-To in the UI
+    public static void WalkToUI(Vector3 Destination)
+    {
+        agent.SetDestination(Destination);
+    }
 }
