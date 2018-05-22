@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
     }
 	
-	
 	void Update () 
     {
         if (Input.GetMouseButtonDown(0) && UIActionManager.instance.canWalk)
@@ -41,18 +40,6 @@ public class PlayerController : MonoBehaviour {
         {
             WalkToUI(transform.position);
         }
-//        if (Input.GetMouseButtonDown(0)){
-//
-//            //Gets Mouse position relitive to the world from the camera
-//            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-//            RaycastHit hit;
-//
-//            if(Physics.Raycast(ray, out hit, 100))
-//            {
-//                agent.destination = hit.point;
-//            }
-//        }
-	}
 
     // For use with Walk-To in the UI
     public void WalkToUI(Vector3 Destination)
