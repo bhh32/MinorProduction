@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
     }
 	
-	void Update () 
+	void Update ()
     {
         if (Input.GetMouseButtonDown(0) && UIActionManager.instance.canWalk)
         {
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour {
         {
             WalkToUI(transform.position);
         }
+    }
 
     // For use with Walk-To in the UI
     public void WalkToUI(Vector3 Destination)
