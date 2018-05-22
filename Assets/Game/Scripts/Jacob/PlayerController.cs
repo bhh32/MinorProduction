@@ -26,22 +26,36 @@ public class PlayerController : MonoBehaviour {
     }
 	
 	
-	void Update () {
-        if (Input.GetMouseButtonDown(0)){
-
+	void Update () 
+    {
+        if (Input.GetMouseButtonDown(0) && UIActionManager.instance.canWalk)
+        {
             //Gets Mouse position relitive to the world from the camera
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
-            if(Physics.Raycast(ray, out hit, 100))
-            {
-                agent.destination = hit.point;
-            }
+            
+            if (Physics.Raycast(ray, out hit, 100))
+                WalkToUI(hit.point);
         }
+        else if (UIActionManager.instance.canWalk)
+        {
+            WalkToUI(transform.position);
+        }
+//        if (Input.GetMouseButtonDown(0)){
+//
+//            //Gets Mouse position relitive to the world from the camera
+//            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//            RaycastHit hit;
+//
+//            if(Physics.Raycast(ray, out hit, 100))
+//            {
+//                agent.destination = hit.point;
+//            }
+//        }
 	}
 
     // For use with Walk-To in the UI
-    public static void WalkToUI(Vector3 Destination)
+    public void WalkToUI(Vector3 Destination)
     {
         agent.SetDestination(Destination);
     }

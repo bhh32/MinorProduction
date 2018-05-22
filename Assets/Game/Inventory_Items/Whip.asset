@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e72e52e3ee464469facc2f72da8dfe, type: 3}
+  m_Name: Whip
+  m_EditorClassIdentifier: 
+  name: Whip
+  icon: {fileID: 21300000, guid: 4ccb6f7151fceb84baef0402be812227, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: 8e97aa07241f82c49a95cc3f601d20e0, type: 3}
