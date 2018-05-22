@@ -14,6 +14,7 @@ public class InventoryUIManager : MonoBehaviour
     [SerializeField] List<Button> inventorySlots = new List<Button>();
     [SerializeField] List<Image> inventoryImages = new List<Image>();
     [SerializeField] Sprite defaultSprite;
+    [SerializeField] Toggle inventoryToggle;
     #endregion
 
     #region Singleton
@@ -44,6 +45,16 @@ public class InventoryUIManager : MonoBehaviour
                 inventorySlot.UpdateSprites(inventorySlot.assignedItem);
                 break;
             }
+            else if (image.sprite == item.icon)
+                break;
+        }
+    }
+
+    public void OpenInventory()
+    {
+        if (inventoryToggle.isOn)
+        {
+            
         }
     }
 }

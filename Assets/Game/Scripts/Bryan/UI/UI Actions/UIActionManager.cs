@@ -25,7 +25,7 @@ public class UIActionManager : MonoBehaviour
     [SerializeField] bool isActionSelected;
     public bool canLookAt { get; private set;}
     public bool canWalk { get; private set; }
-    public bool canUse { get; private set; }
+    public bool canUse;
     public bool canPickUp { get; private set; }	
 	
     #endregion
@@ -42,8 +42,6 @@ public class UIActionManager : MonoBehaviour
             if (!actionSelectionCanvas.activeSelf)
             {
                 actionSelectionCanvas.SetActive(true);
-
-                SetAllBools(false);
             }
             else
             {
@@ -66,6 +64,7 @@ public class UIActionManager : MonoBehaviour
 	public void SetAction_Walk()
 	{
         SetAllBools(false);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 		canWalk = true;
 		isActionSelected = true;
 	}
@@ -117,7 +116,7 @@ public class UIActionManager : MonoBehaviour
 		isActionSelected = true;
 	}
 
-	public void DoAction_LookAt()
+    public void DoAction_LookAt()
 	{
 		if (canLookAt)
 		{
@@ -147,6 +146,44 @@ public class UIActionManager : MonoBehaviour
 		  }
 	}
 
+    public void DoAction_LookAt(Item clickedItem, bool didClick)
+    {
+        if (canLookAt && clickedItem == null && didClick)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                switch (hit.collider.gameObject.tag)
+                {
+                    case "Jungle Rodent":
+                        Debug.Log("It's an oversized rodent!");
+                        break;
+                    case "Kerosene Lamp":
+                        Debug.Log("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                        break;
+                    default:
+                        Debug.Log("You looked at something you weren't supposed to! Perv!");
+                        break;
+                }
+            }
+        }
+        else if (canLookAt && clickedItem != null && didClick)
+        {
+            switch (clickedItem.name)
+            {
+                case "Whip":
+                    Debug.Log("It's my whip!");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        canLookAt = false;
+     }
+
     #endregion
 
     #region Use Action Methods
@@ -162,10 +199,21 @@ public class UIActionManager : MonoBehaviour
 
 	public void DoAction_Use()
 	{
-		if (canUse)
-		{
-            canUse = false;
-		}
+        if (canUse)
+        {
+            if (InventoryUseItem.instance.currentItem != null)
+            {
+                switch(InventoryUseItem.instance.currentItem.name)
+                {
+                    case "Whip":
+                        DoAction_Pickup(InventoryUseItem.instance.currentItem);
+                        break;
+                    default:
+                        canUse = false;
+                        break;
+                }
+            }
+        }
 	}
 
     #endregion
