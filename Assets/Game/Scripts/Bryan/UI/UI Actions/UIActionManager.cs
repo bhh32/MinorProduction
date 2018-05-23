@@ -26,7 +26,9 @@ public class UIActionManager : MonoBehaviour
     public bool canLookAt { get; private set;}
     public bool canWalk { get; private set; }
     public bool canUse;
-    public bool canPickUp { get; private set; }	
+    public bool canPickUp { get; private set; }
+
+    [SerializeField] Text lookAtTestText;
 	
     #endregion
 
@@ -130,13 +132,13 @@ public class UIActionManager : MonoBehaviour
                     switch (hit.collider.gameObject.tag)
                     {
                         case "Jungle Rodent":
-                            Debug.Log("It's an oversized rodent!");
+                            lookAtTestText.text = "It's an oversized rodent!";
                             break;
                         case "Kerosene Lamp":
-                            Debug.Log("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                            lookAtTestText.text = "It's a kerosene lamp! Seems to have a little bit of kerosene left.";
                             break;
                         default:
-                            Debug.Log("You looked at something you weren't supposed to! Perv!");
+                            lookAtTestText.text = "You looked at something you weren't supposed to! Perv!";
                             break;
                       }
                   }
@@ -158,13 +160,13 @@ public class UIActionManager : MonoBehaviour
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Jungle Rodent":
-                        Debug.Log("It's an oversized rodent!");
+                        lookAtTestText.text = "It's an oversized rodent!";
                         break;
                     case "Kerosene Lamp":
-                        Debug.Log("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                        lookAtTestText.text = "It's a kerosene lamp! Seems to have a little bit of kerosene left.";
                         break;
                     default:
-                        Debug.Log("You looked at something you weren't supposed to! Perv!");
+                        lookAtTestText.text = "You looked at something you weren't supposed to! Perv!";
                         break;
                 }
             }
@@ -174,7 +176,7 @@ public class UIActionManager : MonoBehaviour
             switch (clickedItem.name)
             {
                 case "Whip":
-                    Debug.Log("It's my whip!");
+                    lookAtTestText.text = "It's my whip!";
                     break;
                 default:
                     break;

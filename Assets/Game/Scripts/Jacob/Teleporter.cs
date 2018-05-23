@@ -2,55 +2,77 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour {
-
-    //----------------------------------------------------------------------------//
-    //Make sure that the exit is exactly where you want the Object to teleport to.
-    //Having the exit too high may mess with the AI.
-    //----------------------------------------------------------------------------//
-
-
-    //----------------------------------------------------------------------------//
-    //List of known bugs:
-    //-If the teleporter is a two way tele porter the object that was teleported
-    // will be instantly teleported again.
-    //----------------------------------------------------------------------------//
-
-    //----------------------------------------------------------------------------//
-    //Potental fixes:
-    //-Add a timer to the teleporter so it will not be activated instantly when entered
-    //----------------------------------------------------------------------------//
-
-    //object that will be teleported
-    public GameObject teleportObject;
-    //location object will be teleported to (set as a second teleporter once the insta teleport
-    //bug is fixed)
+public class Teleporter : MonoBehaviour
+{
     public GameObject teleportLocation;
 
+    // Varaible to hold the position of the teleport GameObject.
     private Vector3 locationV3;
 
 
-	void Start () {
-        //getting the vector3 from the game object where objects will be teleported to
+	void Start ()
+    {
+        // Get the position of the teleport GameObject.
         locationV3 = teleportLocation.transform.position;
 	}
 
     // Checking for collision with object to be teleported
-	void OnTriggerEnter(Collider c)
+	void OnTriggerEnter(Collider other)
     {
-        //checking if collided object is the player(this makes sure that only the player can reset
-        //where they are going)
-        if(c.gameObject == teleportObject && c.gameObject.tag == "Player")
+        // If the other collider's tag is Player... 
+        if (other.CompareTag("Player"))
         {
-            //checking if collided object is able to teleport
-            teleportObject.transform.position = locationV3;
-            PlayerController.instance.WalkToUI(c.transform.position);
+            // Check to see if the player can teleport...
+            if (PlayerController.instance.canTeleport)
+            {
+                // ... if it can, set its position to the teleport position...
+                other.transform.position = locationV3;
+
+                // ... and set its destination to its now current position.
+                PlayerController.instance.WalkToUI(other.transform.position);
+            }
         }
-        //If the player wasn't the one teleported the player controller will not be effected
-        else if(c.gameObject == teleportObject)
+        // If the collider's tag is Jungle Rodent...
+        else if (other.CompareTag("Jungle Rodent"))
         {
-            teleportObject.transform.position = locationV3;
+            // Check to see if the rodent can teleport...
+            if (other.GetComponent<RodentAI>().CanTeleport)
+            {
+                // ... if it can, set its position to the teleport position...
+                other.transform.position = locationV3;
+
+                // ... and set its destination to its now current position.
+                other.GetComponent<RodentAI>().SetNewDest(locationV3);
+            }
         }
 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // Check to see if the other collider is the player...
+        if (other.CompareTag("Player"))
+        {
+            // ... if it is, check to see if its teleport flag is true...
+            if (PlayerController.instance.canTeleport)
+                // ... if it is, set it to false (stops teleport loops).
+                PlayerController.instance.canTeleport = false;
+            else
+                // ... if it isn't, set it to true (so that we're able to teleport again).
+                PlayerController.instance.canTeleport = true;
+        }
+        // Check to see if the other collider is the jungle rodent...
+        else if (other.CompareTag("Jungle Rodent"))
+        {
+            // Get if it can teleport...
+            bool canTeleport = other.GetComponent<RodentAI>().CanTeleport;
+
+            // ... if it can, set the flag to false (stops teleport loops).
+            if (canTeleport)
+                other.GetComponent<RodentAI>().CanTeleport = false;
+            else
+                // if it can't, set the flag to true (so that it's able to teleport again).
+                other.GetComponent<RodentAI>().CanTeleport = true;
+        }
     }
 }

@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSelectionCanvas: {fileID: 1932017084523198}
-  actionSelectionButtons: {fileID: 0}
+  actionSelectionButtons: {fileID: 1306273421091934}
   isActionSelected: 0
   canUse: 0
 --- !u!114 &114835690432497392

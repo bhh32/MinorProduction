@@ -3,65 +3,104 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RodentAI : MonoBehaviour {
-
-    //--------------------------------------------------------------//
-    //Known bugs:
-    //-Unless the Rodent hits the "currentPoint" at the exact same time as the teleporter
-    // the rodent will continue to try and go back to the waypoint(which will be placed at the teleport 
-    // entrence.
-    //--------------------------------------------------------------//
-
+public class RodentAI : MonoBehaviour
+{
     //Player
     public GameObject indiana;
-    //How close indi has to be before the rodent runs away
+    
+    [Tooltip("How close Indy can get to the Jungle Rodent")]
     public float runDistance;
-    //How far away indi is currently
+    
+    // The current distance between the rodent and Indy.
     float currentDistance;
-    //NavMeshAgent storage
+
+    // The jungle rodent's NavMeshAgent.
     NavMeshAgent agent;
 
-    //Where the rodent will run to
-    public Transform[] waypoints;
-    //Where the rodent is currently
-    public int currentPoint = 0;
+    // The available waypoints the rodent can run to.
+    public GameObject[] waypoints;
 
-	
-	void Start () {
-        //grabs the NavMesh for the rodent
-        agent = GetComponent<NavMeshAgent>();
-	}
-	
+    // The current destination of the rodent;
+    GameObject currentWaypoint;
 
-	void Update () {
-        //Checks the distance between the player(Indi) and the rodent
-        currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
-        //Checks if Indi is too close
-        if (currentDistance <= runDistance)
-        {
-            //Tells the rodent to go to the next point
-            MoveToPoint();
-        }
-	}
+    // Flag for if the rodent can run or not.
+    [SerializeField] bool canRun = true;
 
-    void MoveToPoint()
+    // Allows for teleportation without the rodent getting in a teleport loop.
+    private bool canTeleport;
+    public bool CanTeleport
     {
-        //first if statement tells the rodent where to go
-        if (transform.position != waypoints[currentPoint].transform.position)
+        get { return canTeleport; }
+        set { canTeleport = value; }
+    }
+
+	void Start ()
+    {
+        // Allow the rodent to be able to run straight away.
+        canTeleport = true;
+
+        //Sets the variable to the rodent's NavMeshAgent
+        agent = GetComponent<NavMeshAgent>();
+
+        // Sets a point for the rodent to go to right away.
+        FindNewPoint();
+	}
+	
+	void Update ()
+    {
+        // Checks the distance between the Indy and the rodent
+        currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
+
+        // Allows the rodent to run if it can and Indy is close enough
+        if (currentDistance < runDistance && canRun)
         {
-            agent.SetDestination(waypoints[currentPoint].position);
+            /* Set the flag to false so that it doesn't continally find a new waypoint to go to
+               while Indy is less than the runDistance */
+            canRun = false;
+
+            // Look for a new waypoint to go to.
+            FindNewPoint();
         }
-        //second if statement checks if the rodent is at the point yet (the problem lies here, the 
-        // requirement to move on is too demanding)
-        if (transform.position == waypoints[currentPoint].transform.position && transform.position.y <= 1)
+
+        // If Indy is out of range reset the flag to true.
+        if (currentDistance > runDistance)
+            canRun = true;
+	}
+
+    void FindNewPoint()
+    {
+        // Use a for loop to loop through the waypoints...
+        for(int i = 0; i < waypoints.Length; ++i)
         {
-            currentPoint += 1;
+            // ... if the current waypoint is waypoint[i]...
+            if (waypoints[i] == currentWaypoint)
+            {
+                // ... make a temp int variable to hold the index above this one...
+                int pointIdx = i + 1;
+
+                // ... if that index is too big, loop back to index 0...
+                if (pointIdx == waypoints.Length - 1)
+                    pointIdx = 0;
+
+                // ... set the currentWaypoint to the new waypoint and break out of the loop.
+                currentWaypoint = waypoints[pointIdx];
+                break;
+            }
+            // ... otherwise, set the currentWaypoint to waypoints[i] and break out of the loop.
+            else
+            {
+                currentWaypoint = waypoints[i];
+                break;
+            }
         }
-        //last if statement checks if the rodent is at the last waypoint and to go back to the first one on
-        // its next movenemt
-        if (currentPoint >= waypoints.Length)
-        {
-            currentPoint = 0;
-        }
+
+        // Set the new destination to the new current waypoint.
+        SetNewDest(currentWaypoint.transform.position);
+    }
+
+    // Helper Method to set a new destination.
+    public void SetNewDest(Vector3 newDest)
+    {
+        agent.SetDestination(newDest);
     }
 }
