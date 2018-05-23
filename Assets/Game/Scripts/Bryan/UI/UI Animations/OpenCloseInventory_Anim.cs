@@ -12,13 +12,11 @@ public class OpenCloseInventory_Anim : MonoBehaviour
     {
         if (inventoryToggle.isOn)
         {
-            inventoryToggle.isOn = false;
             anim.SetBool("isOpening", false);
             anim.SetBool("isClosing", true);
         }
         else
         {
-            inventoryToggle.isOn = true;
             anim.SetBool("isOpening", true);
             anim.SetBool("isClosing", false);
         }
