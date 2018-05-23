@@ -23,6 +23,8 @@ public class RodentAI : MonoBehaviour
     // The current destination of the rodent;
     GameObject currentWaypoint;
 
+    GameObject lastWaypoint;
+
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
 
@@ -44,6 +46,7 @@ public class RodentAI : MonoBehaviour
 
         // Sets a point for the rodent to go to right away.
         FindNewPoint();
+        lastWaypoint = currentWaypoint;
 	}
 	
 	void Update ()
@@ -86,6 +89,15 @@ public class RodentAI : MonoBehaviour
                 currentWaypoint = waypoints[pointIdx];
                 break;
             }
+            else if (waypoints[i] == lastWaypoint)
+            {
+                int pointIdx = i - 1;
+
+                if (pointIdx < 0)
+                    pointIdx = waypoints.Length - 1;
+
+                currentWaypoint = waypoints[pointIdx];
+            }
             // ... otherwise, set the currentWaypoint to waypoints[i] and break out of the loop.
             else
             {
@@ -93,6 +105,8 @@ public class RodentAI : MonoBehaviour
                 break;
             }
         }
+
+        lastWaypoint = currentWaypoint;
 
         // Set the new destination to the new current waypoint.
         SetNewDest(currentWaypoint.transform.position);
