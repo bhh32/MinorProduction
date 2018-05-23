@@ -17,6 +17,7 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
     [Header("Cursor Textures")]
     [SerializeField] Texture2D whipCursor;
 
+    bool didClick = false;
 
     public void UpdateSprites(Item newItem)
     {
@@ -72,25 +73,48 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        didClick = true;
         Image thisSlot = GetComponent<Image>();
+        UIActionManager actions = UIActionManager.instance;
 
-        switch (assignedItem.name)
+        if (actions.canUse && assignedItem != null)
         {
-            case "Whip":
-                Cursor.SetCursor(whipCursor, Vector2.zero, CursorMode.Auto);
-                break;
+            switch (assignedItem.name)
+            {
+                case "Whip":
+                    Cursor.SetCursor(whipCursor, Vector2.zero, CursorMode.Auto);
+                    InventoryUseItem.instance.currentItem = assignedItem;
+                    break;
 
-            default:
-                Debug.LogError("Something in switching the cursor went wrong!" + assignedItem);
-                break;
+                default:
+                    Debug.LogError("Something in switching the cursor went wrong!" + assignedItem);
+                    break;
+            }
+
+            assignedItem = null;
+
+            itemDefaultSprite = null;
+            itemHighlightedSprite = null;
+
+            thisSlot.sprite = emptySlotSprite;
         }
-
-        assignedItem = null;
-
-        itemDefaultSprite = null;
-        itemHighlightedSprite = null;
-
-        thisSlot.sprite = emptySlotSprite;
+        else if (actions.canLookAt)
+        {
+            if (assignedItem != null)
+            {
+                UIActionManager.instance.DoAction_LookAt(assignedItem, didClick);
+            }
+            else
+            {
+                if (InventoryUseItem.instance.currentItem != null)
+                {
+                    InventoryUIManager.instance.OnInventoryUpdate(InventoryUseItem.instance.currentItem);
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                }
+                else
+                    Debug.Log("There's nothing there!");
+            }
+        }
     }
 
     #endregion

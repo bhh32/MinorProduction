@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Whip
   m_EditorClassIdentifier: 
   name: Whip
-  icon: {fileID: 21300000, guid: 4ccb6f7151fceb84baef0402be812227, type: 3}
-  highlightedIcon: {fileID: 21300000, guid: 8e97aa07241f82c49a95cc3f601d20e0, type: 3}
+  icon: {fileID: 21300000, guid: 66ba5616e6445b240984abec20afc3ab, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: dfaf0535987e357428a9176bb8bb468e, type: 3}
