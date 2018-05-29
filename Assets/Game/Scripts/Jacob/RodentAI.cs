@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/* Fake the AI, after watching the gameplay video again
+   I noticed that the rodent AI is scripted and faked.
+ */
 public class RodentAI : MonoBehaviour
 {
     //Player
