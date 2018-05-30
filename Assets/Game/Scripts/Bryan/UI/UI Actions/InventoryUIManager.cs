@@ -41,20 +41,14 @@ public class InventoryUIManager : MonoBehaviour
             if (image.sprite == defaultSprite || image.sprite == null)
             {
                 var inventorySlot = image.GetComponent<InventoryAssignedItem>();
+
                 inventorySlot.assignedItem = item;
                 inventorySlot.UpdateSprites(inventorySlot.assignedItem);
+
                 break;
             }
-            else if (image.sprite == item.icon)
+            else if (image.sprite == item.icon || image.sprite == item.openedIcon)
                 break;
-        }
-    }
-
-    public void OpenInventory()
-    {
-        if (inventoryToggle.isOn)
-        {
-            
         }
     }
 }

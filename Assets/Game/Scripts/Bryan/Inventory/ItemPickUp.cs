@@ -13,6 +13,15 @@ public class ItemPickUp : MonoBehaviour
 
     [SerializeField] InventoryUIManager inventoryUIMan;
 
+    void Awake()
+    {
+        if (item.isOpenable)
+        {
+            if (item.isOpen)
+                item.isOpen = false;
+        }
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && UIActionManager.instance.canPickUp)

@@ -50,7 +50,7 @@ public class InventoryUseItem : MonoBehaviour
                     }
                     break;
                 case "Kerosene Lamp":
-                /*if (currentItem.isOpen)
+                if (currentItem.isOpen)
                 {
                     //TODO: Able to use with sprial design.
                 }
@@ -59,10 +59,10 @@ public class InventoryUseItem : MonoBehaviour
                     //TODO: Not able to use this item.
                     currentItem = null;
                 }
-                */
                     break;
                 default:
                     Debug.Log("I can't use that!");
+                    InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                     currentItem = null;
                     break;
             }

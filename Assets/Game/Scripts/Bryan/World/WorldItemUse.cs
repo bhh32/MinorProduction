@@ -6,31 +6,54 @@ using UnityEngine.EventSystems;
 public class WorldItemUse : MonoBehaviour
 {
     bool didClick;
+    [SerializeField] Item currentItem;
+
+    [SerializeField] GameObject originalGameObj;
+    [SerializeField] GameObject modifiedGameObj;
+
+    UIActionManager action;
+
+
+
+    void Start()
+    {
+        action = UIActionManager.instance;
+    }
+
     public void Update()
     {
 
         didClick = Input.GetMouseButtonDown(0);
+
+
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            if (hit.collider.gameObject == gameObject && didClick)
-            {
-                if (UIActionManager.instance.canUse)
-                {
-                    if (InventoryUseItem.instance.currentItem != null && UIActionManager.instance.canUse)
-                    {
-                        InventoryUseItem.instance.Use(gameObject);
+            Debug.DrawLine(Camera.main.transform.position, hit.point, Color.red);
 
-                        UIActionManager.instance.canUse = false;
+            if (hit.collider.gameObject == gameObject && didClick)
+            {    
+                if (action.canUse)
+                {
+                    if (InventoryUseItem.instance.currentItem != null && action.canUse)
+                    {
+                        action.DoAction_Use(gameObject);
+
+                        action.canUse = false;
                     }
                 }
-                else if (UIActionManager.instance.canLookAt && didClick)
-                {
-                    UIActionManager.instance.DoAction_LookAt(null, didClick);
-                }
+                else if (action.canLookAt && didClick)
+                    action.DoAction_LookAt(null, didClick);
+                else if (action.canPush)
+                    action.DoAction_Push();
+                else if (action.canPull)
+                    action.DoAction_Pull();
+                else if (action.canOpen)
+                    action.DoAction_Open(currentItem);
+                
             }
         }
     }  

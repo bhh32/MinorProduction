@@ -19,6 +19,8 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
 
     bool didClick = false;
 
+
+
     public void UpdateSprites(Item newItem)
     {
         if (newItem == null)
@@ -30,8 +32,16 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
 
         if (assignedItem != null)
         {
-            itemDefaultSprite = assignedItem.icon;
-            itemHighlightedSprite = assignedItem.highlightedIcon;
+            if (!assignedItem.isOpen)
+            {
+                itemDefaultSprite = assignedItem.icon;
+                itemHighlightedSprite = assignedItem.highlightedIcon;
+            }
+            else
+            {
+                itemDefaultSprite = assignedItem.openedIcon;
+                itemHighlightedSprite = assignedItem.openedHiglightedIcon;
+            }
 
             thisSlot.GetComponent<Image>().sprite = itemDefaultSprite;
         }
@@ -60,8 +70,8 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
     public void OnPointerExit(PointerEventData eventData)
     {
         Image thisSlot = GetComponent<Image>();
-
-        if (thisSlot.sprite == itemHighlightedSprite)
+       
+        if (thisSlot.sprite == itemHighlightedSprite || thisSlot.sprite == itemDefaultSprite)
             thisSlot.sprite = itemDefaultSprite;
         else
             thisSlot.sprite = emptySlotSprite;
@@ -85,7 +95,17 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                     Cursor.SetCursor(whipCursor, Vector2.zero, CursorMode.Auto);
                     InventoryUseItem.instance.currentItem = assignedItem;
                     break;
-
+                case "Kerosene Lamp":
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    if (assignedItem.isOpen)
+                    {
+                        InventoryUseItem.instance.currentItem = assignedItem;
+                    }
+                    else
+                    {
+                        Debug.Log("I think I need to open it first.");
+                    }
+                    break;
                 default:
                     Debug.LogError("Something in switching the cursor went wrong!" + assignedItem);
                     break;
@@ -102,17 +122,38 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
         {
             if (assignedItem != null)
             {
-                UIActionManager.instance.DoAction_LookAt(assignedItem, didClick);
+                actions.DoAction_LookAt(assignedItem, didClick);
             }
             else
             {
                 if (InventoryUseItem.instance.currentItem != null)
                 {
-                    InventoryUIManager.instance.OnInventoryUpdate(InventoryUseItem.instance.currentItem);
-                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    if (!assignedItem.isOpen)
+                    {
+                        InventoryUIManager.instance.OnInventoryUpdate(InventoryUseItem.instance.currentItem);
+                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    }
+                    else
+                        UpdateSprites(assignedItem);
                 }
                 else
                     Debug.Log("There's nothing there!");
+            }
+        }
+        else if (actions.canOpen)
+        {
+            if (assignedItem != null)
+            {
+                actions.DoAction_Open(assignedItem);
+                UpdateSprites(assignedItem);
+            }
+        }
+        else if (actions.canClose)
+        {
+            if (assignedItem != null)
+            {
+                actions.DoAction_Close(assignedItem);
+                UpdateSprites(assignedItem);
             }
         }
     }
