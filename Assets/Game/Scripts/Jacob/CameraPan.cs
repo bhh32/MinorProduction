@@ -24,7 +24,7 @@ public class CameraPan : MonoBehaviour {
     public float panRange = 0.7f;
 
     bool isPanning = false;
-
+    public bool isMoving = false;
 	
 	public void panCam(Vector3 newPos)
     {
@@ -34,9 +34,9 @@ public class CameraPan : MonoBehaviour {
             isPanning = true;
             //Debug.Log("I am lerping!");
             //calls the update to move the camera
+            isMoving = true;
             StartCoroutine(PanTimer(newPos));
-            isPanning = false;
-        }
+         }
     }
 
 
@@ -45,7 +45,7 @@ public class CameraPan : MonoBehaviour {
     {
         float timer = 0f;
         float journeyLength = Vector3.Distance(newPos, transform.position);
-        while(Vector3.Distance(newPos,transform.position) > 0f)
+        while(Vector3.Distance(newPos,transform.position) >= .5f)
         {
             timer++;
             float distanceCovered = Mathf.Abs((Time.time - timer)) * panRange;
@@ -53,5 +53,7 @@ public class CameraPan : MonoBehaviour {
             transform.position = Vector3.Lerp(transform.position, newPos, panRange);
             yield return null;
         }
+
+        isMoving = false;
     }
 }
