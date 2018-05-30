@@ -190,6 +190,12 @@ public class UIActionManager : MonoBehaviour
                 case "Whip":
                     lookAtTestText.text = "It's my whip!";
                     break;
+                case "Kerosene Lamp":
+                    if (clickedItem.isOpen)
+                        lookAtTestText.text = "It's an open kerosene lamp! Careful not to spill the kerosene!";
+                    else
+                        lookAtTestText.text = "It's a kerosene lamp! Seem to have a little bit of kerosene left.";
+                    break;
                 default:
                     break;
             }
@@ -248,23 +254,6 @@ public class UIActionManager : MonoBehaviour
             Debug.Log("I can't open that!");
 
         canOpen = false;
-    }
-
-    public void DoAction_Open(Item assignedItem, GameObject attachedObj)
-    {
-        if (canOpen && assignedItem.isOpenable)
-        {
-            if (!assignedItem.isOpen)
-            {
-                assignedItem.isOpen = true;
-
-                if (assignedItem.name == "Door")
-                {
-                    assignedItem.originalGameObject.SetActive(false);
-                    assignedItem.modifiedGameObject.SetActive(true);
-                }
-            }
-        }
     }
 
     #endregion

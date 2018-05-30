@@ -1272,6 +1272,7 @@ MonoBehaviour:
   actionSelectionButtons: {fileID: 1306273421091934}
   isActionSelected: 0
   canUse: 0
+  canOpen: 0
   lookAtTestText: {fileID: 0}
 --- !u!114 &114819449265342762
 MonoBehaviour:

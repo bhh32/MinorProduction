@@ -19,7 +19,7 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
 
     bool didClick = false;
 
-
+    bool wasUsed = false;
 
     public void UpdateSprites(Item newItem)
     {
@@ -83,12 +83,19 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        // Set didClick flag to true
         didClick = true;
+        // Get the current Image on this inventory slot button
         Image thisSlot = GetComponent<Image>();
+        // Get the instance of the UIActionManager
         UIActionManager actions = UIActionManager.instance;
 
+        // Check if we're going to use an item and if we've selected an item from the inventory
+        // to actually use.
         if (actions.canUse && assignedItem != null)
         {
+            // Check the name of the item we are going to use and do the appropriate action
+            // for that item.
             switch (assignedItem.name)
             {
                 case "Whip":
@@ -100,9 +107,11 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                     if (assignedItem.isOpen)
                     {
                         InventoryUseItem.instance.currentItem = assignedItem;
+                        wasUsed = true;
                     }
                     else
                     {
+                        UpdateSprites(assignedItem);
                         Debug.Log("I think I need to open it first.");
                     }
                     break;
@@ -111,12 +120,16 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                     break;
             }
 
+            // Set the assignedItem to null as we've either used it or put it back into the inventory
             assignedItem = null;
 
+            // Set the itemDefaultSprite and itemHighlightedSprite to null, as 
+            // we no longer have an item.
             itemDefaultSprite = null;
             itemHighlightedSprite = null;
 
-            thisSlot.sprite = emptySlotSprite;
+            if (wasUsed)
+                UpdateSprites(null);
         }
         else if (actions.canLookAt)
         {
@@ -137,7 +150,7 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                         UpdateSprites(assignedItem);
                 }
                 else
-                    Debug.Log("There's nothing there!");
+                    Debug.Log("There's nothing to look at!");
             }
         }
         else if (actions.canOpen)
