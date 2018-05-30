@@ -24,9 +24,7 @@ public class RodentAI : MonoBehaviour
     public GameObject[] waypoints;
 
     // The current destination of the rodent;
-    GameObject currentWaypoint;
-
-    GameObject lastWaypoint;
+    public GameObject currentWaypoint;
 
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
@@ -48,8 +46,9 @@ public class RodentAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         // Sets a point for the rodent to go to right away.
-        FindNewPoint();
-        lastWaypoint = currentWaypoint;
+        currentWaypoint = waypoints[0];
+
+        SetNewDest(currentWaypoint.transform.position);
 	}
 	
 	void Update ()
@@ -75,61 +74,23 @@ public class RodentAI : MonoBehaviour
 
     void FindNewPoint()
     {
-
         if (currentWaypoint == waypoints[0])
-            SetNewDest(waypoints[1].transform.position);
+            currentWaypoint = waypoints[1];
 
         else if (currentWaypoint == waypoints[1])
-            SetNewDest(waypoints[2].transform.position);
+            currentWaypoint = waypoints[2];
 
         else if (currentWaypoint == waypoints[2])
-            SetNewDest(waypoints[3].transform.position);
+            currentWaypoint = waypoints[3];
 
         else if (currentWaypoint == waypoints[3])
-            SetNewDest(waypoints[4].transform.position);
+            currentWaypoint = waypoints[4];
 
         else if (currentWaypoint == waypoints[4])
-            SetNewDest(waypoints[5].transform.position);
+            currentWaypoint = waypoints[5];
 
         else if (currentWaypoint == waypoints[5])
-            SetNewDest(waypoints[0].transform.position);
-
-
-        // Use a for loop to loop through the waypoints...
-        //for(int i = 0; i < waypoints.Length; ++i)
-        //{
-        //    // ... if the current waypoint is waypoint[i]...
-        //    if (waypoints[i] == currentWaypoint)
-        //    {
-        //        // ... make a temp int variable to hold the index above this one...
-        //        int pointIdx = i + 1;
-
-        //        // ... if that index is too big, loop back to index 0...
-        //        if (pointIdx == waypoints.Length - 1)
-        //            pointIdx = 0;
-
-        //        // ... set the currentWaypoint to the new waypoint and break out of the loop.
-        //        currentWaypoint = waypoints[pointIdx];
-        //        break;
-        //    }
-        //    else if (waypoints[i] == lastWaypoint)
-        //    {
-        //        int pointIdx = i - 1;
-
-        //        if (pointIdx < 0)
-        //            pointIdx = waypoints.Length - 1;
-
-        //        currentWaypoint = waypoints[pointIdx];
-        //    }
-        //    // ... otherwise, set the currentWaypoint to waypoints[i] and break out of the loop.
-        //    else
-        //    {
-        //        currentWaypoint = waypoints[i];
-        //        break;
-        //    }
-        //}
-
-        lastWaypoint = currentWaypoint;
+            currentWaypoint = waypoints[0];
 
         // Set the new destination to the new current waypoint.
         SetNewDest(currentWaypoint.transform.position);
