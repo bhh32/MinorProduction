@@ -33,7 +33,8 @@ public class UIActionManager : MonoBehaviour
     public bool canPull { get; private set; }
     public bool canTalkTo { get; private set; }
 
-    [SerializeField] Text lookAtTestText;
+    //[SerializeField] Text speechText;
+    [SerializeField] CharacterTalkText charTalkText;
 	
     #endregion
 
@@ -144,13 +145,16 @@ public class UIActionManager : MonoBehaviour
                     switch (hit.collider.gameObject.tag)
                     {
                         case "Jungle Rodent":
-                            lookAtTestText.text = "It's an oversized rodent!";
+                            charTalkText.TextUpdate("It's an oversized rodent!");
+                            charTalkText.isTextEnabled = true;
                             break;
                         case "Kerosene Lamp":
-                            lookAtTestText.text = "It's a kerosene lamp! Seems to have a little bit of kerosene left.";
+                            charTalkText.TextUpdate("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                            charTalkText.isTextEnabled = true;
                             break;
                         default:
-                            lookAtTestText.text = "You looked at something you weren't supposed to! Perv!";
+                            charTalkText.TextUpdate("You looked at something you weren't supposed to! Perv!");
+                            charTalkText.isTextEnabled = true;
                             break;
                       }
                   }
@@ -172,13 +176,18 @@ public class UIActionManager : MonoBehaviour
                 switch (hit.collider.gameObject.name)
                 {
                     case "Jungle Rodent":
-                        lookAtTestText.text = "It's an oversized rodent!";
+                        {
+                            charTalkText.TextUpdate("It's an oversized rodent!");
+                            charTalkText.isTextEnabled = true;
+                        }
                         break;
                     case "Kerosene Lamp":
-                        lookAtTestText.text = "It's a kerosene lamp! Seems to have a little bit of kerosene left.";
+                        charTalkText.TextUpdate("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                        charTalkText.isTextEnabled = true;
                         break;
                     default:
-                        lookAtTestText.text = "You looked at something you weren't supposed to! Perv!";
+                        charTalkText.TextUpdate("You looked at something you weren't supposed to! Perv!");
+                        charTalkText.isTextEnabled = true;
                         break;
                 }
             }
@@ -188,13 +197,20 @@ public class UIActionManager : MonoBehaviour
             switch (clickedItem.name)
             {
                 case "Whip":
-                    lookAtTestText.text = "It's my whip!";
+                    charTalkText.TextUpdate("It's my whip!");
+                    charTalkText.isTextEnabled = true;
                     break;
                 case "Kerosene Lamp":
                     if (clickedItem.isOpen)
-                        lookAtTestText.text = "It's an open kerosene lamp! Careful not to spill the kerosene!";
+                    {
+                        charTalkText.TextUpdate("It's an open kerosene lamp! Careful not to spill the kerosene!");
+                        charTalkText.isTextEnabled = true;
+                    }
                     else
-                        lookAtTestText.text = "It's a kerosene lamp! Seem to have a little bit of kerosene left.";
+                    {
+                        charTalkText.TextUpdate("It's a kerosene lamp! Seem to have a little bit of kerosene left.");
+                        charTalkText.isTextEnabled = true;
+                    }
                     break;
                 default:
                     break;
@@ -248,10 +264,16 @@ public class UIActionManager : MonoBehaviour
             if (!assignedItem.isOpen)
                 assignedItem.isOpen = true;
             else
-                Debug.Log("It's already open!");
+            {
+                charTalkText.TextUpdate("It's already open!");
+                charTalkText.isTextEnabled = true;            
+            }
         }
         else if (!assignedItem.isOpenable)
-            Debug.Log("I can't open that!");
+        {
+            charTalkText.TextUpdate("I can't open that!");
+            charTalkText.isTextEnabled = true;
+        }
 
         canOpen = false;
     }
@@ -271,13 +293,19 @@ public class UIActionManager : MonoBehaviour
     {
         if (canClose && assignedItem.isOpenable)
         {            
-            if (assignedItem.isOpen)                   
-                assignedItem.isOpen = false;            
+            if (assignedItem.isOpen)
+                assignedItem.isOpen = false;
             else
-                Debug.Log("It's already closed!");
+            {
+                charTalkText.TextUpdate("It's already closed!");
+                charTalkText.isTextEnabled = true;
+            }
         }
         else if (!assignedItem.isOpenable)
-            Debug.Log("I can't close that!");
+        {
+            charTalkText.TextUpdate("I can't close that!");
+            charTalkText.isTextEnabled = true;
+        }
 
         canClose = false;
     }

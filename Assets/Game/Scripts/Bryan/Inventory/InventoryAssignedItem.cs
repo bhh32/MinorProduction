@@ -17,6 +17,9 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
     [Header("Cursor Textures")]
     [SerializeField] Texture2D whipCursor;
 
+    [SerializeField, Header("Player Character")]
+    CharacterTalkText indianaJones;
+
     bool didClick = false;
 
     bool wasUsed = false;
@@ -112,7 +115,8 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                     else
                     {
                         UpdateSprites(assignedItem);
-                        Debug.Log("I think I need to open it first.");
+                        indianaJones.TextUpdate("I think I need to open it first.");
+                        indianaJones.isTextEnabled = true;
                     }
                     break;
                 default:
@@ -150,7 +154,10 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                         UpdateSprites(assignedItem);
                 }
                 else
-                    Debug.Log("There's nothing to look at!");
+                {
+                    indianaJones.TextUpdate("There's nothing to look at!");
+                    indianaJones.isTextEnabled = true;
+                }
             }
         }
         else if (actions.canOpen)

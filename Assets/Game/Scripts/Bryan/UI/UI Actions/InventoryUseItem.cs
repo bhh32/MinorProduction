@@ -15,6 +15,7 @@ public class InventoryUseItem : MonoBehaviour
     #endregion
 
     public Item currentItem;
+    [SerializeField] CharacterTalkText indyTalkText;
 
     public void Use(GameObject clickedObj)
     {
@@ -29,11 +30,12 @@ public class InventoryUseItem : MonoBehaviour
                         InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                         currentItem = null;
                         Debug.Log("You used the whip with the jungle rodent!");
-                        //TODO: Play Indy
+                        //TODO: Play Indy whip animation and sucess music
                     }
                     else
                     {
-                        Debug.Log("I can't use that with that");
+                        indyTalkText.TextUpdate("I can't use that with that");
+                        indyTalkText.isTextEnabled = true;
                         currentItem = null;
                     }
                     break;
@@ -64,7 +66,8 @@ public class InventoryUseItem : MonoBehaviour
                             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                             InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                             currentItem = null;
-                            Debug.Log("I can't use this with that.");
+                            indyTalkText.TextUpdate("I can't use that with that");
+                            indyTalkText.isTextEnabled = true;
                         }
                     }
                     else
@@ -73,13 +76,20 @@ public class InventoryUseItem : MonoBehaviour
                         InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                         currentItem = null;
                         if (clickedObj.CompareTag("Spiral Design"))
-                            Debug.Log("It needs to be open before I use it.");
+                        {
+                            indyTalkText.TextUpdate("It needs to be open before I use it.");
+                            indyTalkText.isTextEnabled = true;
+                        }
                         else
-                            Debug.Log("I can't use this with that.");
+                        {
+                            indyTalkText.TextUpdate("I can't use this with that.");
+                            indyTalkText.isTextEnabled = true;
+                        }
                     }
                     break;
                 default:
-                    Debug.Log("I can't use that!");
+                    indyTalkText.TextUpdate("I can't use that!");
+                    indyTalkText.isTextEnabled = true;
                     InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                     currentItem = null;
                     break;
@@ -87,7 +97,8 @@ public class InventoryUseItem : MonoBehaviour
         }
         else
         {
-            Debug.Log("You haven't selected an item to use.");
+            indyTalkText.TextUpdate("I didn't choose an item to use!");
+            indyTalkText.isTextEnabled = true;;
         }
     }
 

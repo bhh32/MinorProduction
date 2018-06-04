@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using TMPro;
 
 public class HoverToolTip : MonoBehaviour,  IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] Text toolTip;
+    //[SerializeField] Text toolTip;
+    [SerializeField] TMP_Text toolTip;
 
     void Start()
     {

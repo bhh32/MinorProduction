@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Name: Kerosene Lamp
   m_EditorClassIdentifier: 
   name: Kerosene Lamp
-  icon: {fileID: 21300000, guid: 7075530b86375e545a0930af1b7a88ca, type: 3}
-  highlightedIcon: {fileID: 21300000, guid: 71f2991f67124e84fb3041c47c201f68, type: 3}
-  openedIcon: {fileID: 21300000, guid: 84a050e36c7592047bec166a6a469403, type: 3}
-  openedHiglightedIcon: {fileID: 21300000, guid: 146a37a9f76179e4a813d197f7c3d5c8,
+  icon: {fileID: 21300000, guid: 19cc8c1480c4e66479eda04891531c78, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: e73d72f398fb3b44f94af91892161aff, type: 3}
+  openedIcon: {fileID: 21300000, guid: c6b687a2b4457384e86ec56d5a32cd94, type: 3}
+  openedHiglightedIcon: {fileID: 21300000, guid: ea9b360e3b392664c976d5441a0c9472,
     type: 3}
+  originalGameObject: {fileID: 0}
+  modifiedGameObject: {fileID: 0}
   isOpen: 0
   isOpenable: 1
+  isPullable: 0
+  hasBeenPulled: 0
+  isPushable: 0
+  hasBeenPushed: 0

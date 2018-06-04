@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Name: Whip
   m_EditorClassIdentifier: 
   name: Whip
-  icon: {fileID: 21300000, guid: 66ba5616e6445b240984abec20afc3ab, type: 3}
-  highlightedIcon: {fileID: 21300000, guid: dfaf0535987e357428a9176bb8bb468e, type: 3}
+  icon: {fileID: 21300000, guid: f296c005cf6078044a1828188854ed19, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: 44d3edd1b0ef3ab4ab979540709a49e7, type: 3}
+  openedIcon: {fileID: 0}
+  openedHiglightedIcon: {fileID: 0}
+  originalGameObject: {fileID: 0}
+  modifiedGameObject: {fileID: 0}
+  isOpen: 0
+  isOpenable: 0
+  isPullable: 0
+  hasBeenPulled: 0
+  isPushable: 0
+  hasBeenPushed: 0
