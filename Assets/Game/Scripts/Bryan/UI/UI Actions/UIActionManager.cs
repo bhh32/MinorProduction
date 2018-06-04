@@ -27,6 +27,11 @@ public class UIActionManager : MonoBehaviour
     public bool canWalk { get; private set; }
     public bool canUse;
     public bool canPickUp { get; private set; }
+    public bool canOpen;
+    public bool canClose { get; private set; }
+    public bool canPush { get; private set; }
+    public bool canPull { get; private set; }
+    public bool canTalkTo { get; private set; }
 
     [SerializeField] Text lookAtTestText;
 	
@@ -65,9 +70,12 @@ public class UIActionManager : MonoBehaviour
     // Set the current action to walk
 	public void SetAction_Walk()
 	{
+        ResetInventoryItem();
+
         SetAllBools(false);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 		canWalk = true;
+
 		isActionSelected = true;
 	}
 
@@ -93,6 +101,8 @@ public class UIActionManager : MonoBehaviour
     // Set current action to pickup an object
 	public void SetAction_PickUp()
 	{
+        ResetInventoryItem();
+
         SetAllBools(false);
         canPickUp = true;
         isActionSelected = true;
@@ -113,6 +123,8 @@ public class UIActionManager : MonoBehaviour
 
 	public void SetAction_LookAt()
 	{
+        ResetInventoryItem();
+
         SetAllBools(false);
 		canLookAt = true;
 		isActionSelected = true;
@@ -157,7 +169,7 @@ public class UIActionManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100f))
             {
-                switch (hit.collider.gameObject.tag)
+                switch (hit.collider.gameObject.name)
                 {
                     case "Jungle Rodent":
                         lookAtTestText.text = "It's an oversized rodent!";
@@ -177,6 +189,12 @@ public class UIActionManager : MonoBehaviour
             {
                 case "Whip":
                     lookAtTestText.text = "It's my whip!";
+                    break;
+                case "Kerosene Lamp":
+                    if (clickedItem.isOpen)
+                        lookAtTestText.text = "It's an open kerosene lamp! Careful not to spill the kerosene!";
+                    else
+                        lookAtTestText.text = "It's a kerosene lamp! Seem to have a little bit of kerosene left.";
                     break;
                 default:
                     break;
@@ -199,24 +217,119 @@ public class UIActionManager : MonoBehaviour
 		//TODO: This will couple with the inventory system maybe use a delegate?
 	}
 
-	public void DoAction_Use()
+    public void DoAction_Use(GameObject thingObjUsedOn)
 	{
         if (canUse)
         {
             if (InventoryUseItem.instance.currentItem != null)
             {
-                switch(InventoryUseItem.instance.currentItem.name)
-                {
-                    case "Whip":
-                        DoAction_Pickup(InventoryUseItem.instance.currentItem);
-                        break;
-                    default:
-                        canUse = false;
-                        break;
-                }
+                InventoryUseItem.instance.Use(thingObjUsedOn);
             }
         }
+        else
+            Debug.Log("canUse is false!");
 	}
+
+    #endregion
+
+    #region Open Methods
+
+    public void SetAction_Open()
+    {
+        SetAllBools(false);
+        canOpen = true;
+        isActionSelected = true;
+    }
+
+    public void DoAction_Open(Item assignedItem)
+    {
+        if (canOpen && assignedItem.isOpenable)
+        {            
+            if (!assignedItem.isOpen)
+                assignedItem.isOpen = true;
+            else
+                Debug.Log("It's already open!");
+        }
+        else if (!assignedItem.isOpenable)
+            Debug.Log("I can't open that!");
+
+        canOpen = false;
+    }
+
+    #endregion
+
+    #region Close Methods
+
+    public void SetAction_Close()
+    {
+        SetAllBools(false);
+        canClose = true;
+        isActionSelected = true;
+    }
+
+    public void DoAction_Close(Item assignedItem)
+    {
+        if (canClose && assignedItem.isOpenable)
+        {            
+            if (assignedItem.isOpen)                   
+                assignedItem.isOpen = false;            
+            else
+                Debug.Log("It's already closed!");
+        }
+        else if (!assignedItem.isOpenable)
+            Debug.Log("I can't close that!");
+
+        canClose = false;
+    }
+
+    #endregion
+
+    #region Push Methods
+
+    public void SetAction_Push()
+    {
+
+    }
+
+    public void DoAction_Push()
+    {
+
+    }
+
+    #endregion
+
+    #region Pull Methods
+
+    public void SetAction_Pull()
+    {
+        SetAllBools(false);
+
+        canPull = true;
+        isActionSelected = true;
+    }
+
+    public void DoAction_Pull()
+    {
+
+    }
+
+    #endregion
+
+    #region TalkTo Methods
+
+    public void SetAction_TalkTo()
+    {
+        SetAllBools(false);
+        canTalkTo = true;
+        isActionSelected = true;
+    }
+
+    public void DoAction_TalkTo()
+    {
+        // TODO: Start Dialog System
+
+        canTalkTo = false;
+    }
 
     #endregion
 
@@ -228,6 +341,11 @@ public class UIActionManager : MonoBehaviour
         canLookAt = newValue;
         canPickUp = newValue;
         canWalk = newValue;
+        canOpen = newValue;
+        canClose = newValue;
+        canPull = newValue;
+        canPush = newValue;
+        canTalkTo = newValue;
     }
 
     public bool AreAllBools(bool boolQuestion)
@@ -238,6 +356,11 @@ public class UIActionManager : MonoBehaviour
         allBools.Add(canLookAt);
         allBools.Add(canWalk);
         allBools.Add(canPickUp);
+        allBools.Add(canOpen);
+        allBools.Add(canClose);
+        allBools.Add(canPull);
+        allBools.Add(canPush);
+        allBools.Add(canTalkTo);
 
         foreach (bool bools in allBools)
         {
@@ -246,6 +369,15 @@ public class UIActionManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    void ResetInventoryItem()
+    {
+        if (InventoryUseItem.instance.currentItem != null)
+        {
+            InventoryUIManager.instance.OnInventoryUpdate(InventoryUseItem.instance.currentItem);
+            InventoryUseItem.instance.currentItem = null;
+        }
     }
 
     #endregion

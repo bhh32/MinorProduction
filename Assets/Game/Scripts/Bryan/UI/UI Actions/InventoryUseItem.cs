@@ -50,19 +50,37 @@ public class InventoryUseItem : MonoBehaviour
                     }
                     break;
                 case "Kerosene Lamp":
-                /*if (currentItem.isOpen)
-                {
-                    //TODO: Able to use with sprial design.
-                }
-                else
-                {
-                    //TODO: Not able to use this item.
-                    currentItem = null;
-                }
-                */
+                    if (currentItem.isOpen)
+                    {
+                        if (clickedObj.CompareTag("Spiral Design"))
+                        {
+                            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                            currentItem = null;
+                            Debug.Log("You used the kerosene lamp on the spiral design!");
+                            // Do the pour animation
+                        }
+                        else
+                        {
+                            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                            InventoryUIManager.instance.OnInventoryUpdate(currentItem);
+                            currentItem = null;
+                            Debug.Log("I can't use this with that.");
+                        }
+                    }
+                    else
+                    {
+                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                        InventoryUIManager.instance.OnInventoryUpdate(currentItem);
+                        currentItem = null;
+                        if (clickedObj.CompareTag("Spiral Design"))
+                            Debug.Log("It needs to be open before I use it.");
+                        else
+                            Debug.Log("I can't use this with that.");
+                    }
                     break;
                 default:
                     Debug.Log("I can't use that!");
+                    InventoryUIManager.instance.OnInventoryUpdate(currentItem);
                     currentItem = null;
                     break;
             }
