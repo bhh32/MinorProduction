@@ -8,6 +8,16 @@ using UnityEngine.AI;
  */
 public class RodentAI : MonoBehaviour
 {
+
+    #region singleton
+    public static RodentAI instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
     //Player
     public GameObject indiana;
     
@@ -23,13 +33,20 @@ public class RodentAI : MonoBehaviour
     // The available waypoints the rodent can run to.
     public GameObject[] waypoints;
 
+    // The waypoint where the rodent will run to when whipped in the correct spot.
+    public GameObject whipWaypoint;
+
     // The current destination of the rodent;
     public GameObject currentWaypoint;
+
+    // Was the rodent whipped?
+    bool wasWhipped = false;
 
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
 
     // Allows for teleportation without the rodent getting in a teleport loop.
+
     private bool canTeleport;
     public bool CanTeleport
     {
@@ -57,14 +74,28 @@ public class RodentAI : MonoBehaviour
         currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
 
         // Allows the rodent to run if it can and Indy is close enough
-        if (currentDistance < runDistance && canRun)
+        if (currentDistance < runDistance && canRun || canRun && wasWhipped)
         {
             /* Set the flag to false so that it doesn't continally find a new waypoint to go to
                while Indy is less than the runDistance */
             canRun = false;
-
+            wasWhipped = false;
             // Look for a new waypoint to go to.
             FindNewPoint();
+        }
+
+        if (currentWaypoint.transform.position == waypoints[1].transform.position && wasWhipped == true)
+        {
+            SetNewDest(whipWaypoint.transform.position);
+            if(transform.position == whipWaypoint.transform.position)
+            {
+                float timer = 1.0f;
+                timer -= Time.deltaTime;
+                if(timer <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
 
         // If Indy is out of range reset the flag to true.
@@ -81,15 +112,6 @@ public class RodentAI : MonoBehaviour
             currentWaypoint = waypoints[2];
 
         else if (currentWaypoint == waypoints[2])
-            currentWaypoint = waypoints[3];
-
-        else if (currentWaypoint == waypoints[3])
-            currentWaypoint = waypoints[4];
-
-        else if (currentWaypoint == waypoints[4])
-            currentWaypoint = waypoints[5];
-
-        else if (currentWaypoint == waypoints[5])
             currentWaypoint = waypoints[0];
 
         // Set the new destination to the new current waypoint.
