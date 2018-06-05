@@ -9,7 +9,6 @@ public class Teleporter : MonoBehaviour
     // Varaible to hold the position of the teleport GameObject.
     private Vector3 locationV3;
 
-
 	void Start ()
     {
         // Get the position of the teleport GameObject.
@@ -19,12 +18,15 @@ public class Teleporter : MonoBehaviour
     // Checking for collision with object to be teleported
 	void OnTriggerEnter(Collider other)
     {
-        // If the other collider's tag is Player... 
+        // If the other collider's tag is Player...
         if (other.CompareTag("Player"))
         {
             // Check to see if the player can teleport...
             if (PlayerController.instance.canTeleport)
             {
+                // ... set the ability to teleport to false so you dont transport instantly...
+                PlayerController.instance.canTeleport = false;
+
                 // ... if it can, set its position to the teleport position...
                 other.transform.position = locationV3;
 
