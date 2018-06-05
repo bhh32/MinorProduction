@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/* Fake the AI, after watching the gameplay video again
-   I noticed that the rodent AI is scripted and faked.
- */
 public class RodentAI : MonoBehaviour
 {
 
@@ -40,7 +37,12 @@ public class RodentAI : MonoBehaviour
     public GameObject currentWaypoint;
 
     // Was the rodent whipped?
-    bool wasWhipped = false;
+    private bool wasWhipped = false;
+    public bool WasWhipped
+    {
+        get { return wasWhipped; }
+        set { wasWhipped = value; }
+    }
 
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
@@ -76,12 +78,17 @@ public class RodentAI : MonoBehaviour
         if (currentWaypoint == waypoints[1] && wasWhipped == true)
         {
             SetNewDest(whipWaypoint.transform.position);
+<<<<<<< HEAD
             if (transform.position == whipWaypoint.transform.position)
             {
                 Destroy(gameObject, 1);
             }
         }
 
+=======
+
+        }
+>>>>>>> 92758f47bd57cb5e4b40aae72a52a9a72abbc889
         // Allows the rodent to run if it can and Indy is close enough
         else if (currentDistance < runDistance && canRun || canRun && wasWhipped)
         {
@@ -93,8 +100,21 @@ public class RodentAI : MonoBehaviour
             FindNewPoint();
         }
 
+<<<<<<< HEAD
         
 
+=======
+        if(transform.position == whipWaypoint.transform.position)
+        {
+            float timer = 1.0f;
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+            {
+                Debug.Log("Rodent Destroyed!");
+                Destroy(gameObject);
+            }
+        }
+>>>>>>> 92758f47bd57cb5e4b40aae72a52a9a72abbc889
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)
             canRun = true;

@@ -24,20 +24,22 @@ public class InventoryUseItem : MonoBehaviour
             switch (currentItem.name)
             {
                 case "Whip":
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    InventoryUIManager.instance.OnInventoryUpdate(currentItem);
+
                     if (clickedObj.CompareTag("Jungle Rodent"))
-                    {
-                        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                        InventoryUIManager.instance.OnInventoryUpdate(currentItem);
-                        currentItem = null;
-                        Debug.Log("You used the whip with the jungle rodent!");
+                    {   
                         //TODO: Play Indy whip animation and sucess music
+                        RodentAI.instance.WasWhipped = true;
+
                     }
                     else
                     {
                         indyTalkText.TextUpdate("I can't use that with that");
                         indyTalkText.isTextEnabled = true;
-                        currentItem = null;
                     }
+
+                    currentItem = null;
                     break;
                 case "Spiral Design":
                     if (clickedObj.CompareTag("Animal Head"))
