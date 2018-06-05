@@ -78,17 +78,8 @@ public class RodentAI : MonoBehaviour
         if (currentWaypoint == waypoints[1] && wasWhipped == true)
         {
             SetNewDest(whipWaypoint.transform.position);
-<<<<<<< HEAD
-            if (transform.position == whipWaypoint.transform.position)
-            {
-                Destroy(gameObject, 1);
-            }
         }
 
-=======
-
-        }
->>>>>>> 92758f47bd57cb5e4b40aae72a52a9a72abbc889
         // Allows the rodent to run if it can and Indy is close enough
         else if (currentDistance < runDistance && canRun || canRun && wasWhipped)
         {
@@ -99,22 +90,7 @@ public class RodentAI : MonoBehaviour
             // Look for a new waypoint to go to.
             FindNewPoint();
         }
-
-<<<<<<< HEAD
-        
-
-=======
-        if(transform.position == whipWaypoint.transform.position)
-        {
-            float timer = 1.0f;
-            timer -= Time.deltaTime;
-            if(timer <= 0)
-            {
-                Debug.Log("Rodent Destroyed!");
-                Destroy(gameObject);
-            }
-        }
->>>>>>> 92758f47bd57cb5e4b40aae72a52a9a72abbc889
+            
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)
             canRun = true;
