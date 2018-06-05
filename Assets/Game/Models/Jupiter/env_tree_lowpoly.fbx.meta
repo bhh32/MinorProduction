@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 490446676b02ba14a9c1d89cac1dc8e8
-timeCreated: 1528151848
+guid: 7800db440692c6243991b29e8be4ab92
+timeCreated: 1528158325
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Fern1
     400000: //RootNode
-    400002: Fern1
-    2100000: lambert1
-    2300000: Fern1
-    3300000: Fern1
-    4300000: Fern1
+    2100000: lambert2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: tree
     9500000: //RootNode
   externalObjects: {}
   materials:
