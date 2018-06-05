@@ -17,6 +17,8 @@ public class InventoryUseItem : MonoBehaviour
     public Item currentItem;
     [SerializeField] CharacterTalkText indyTalkText;
 
+
+
     public void Use(GameObject clickedObj)
     {
         if (currentItem != null)
@@ -29,7 +31,9 @@ public class InventoryUseItem : MonoBehaviour
 
                     if (clickedObj.CompareTag("Jungle Rodent"))
                     {   
-                        //TODO: Play Indy whip animation and sucess music
+                        //TODO: Play Indy whip animation
+                        SoundManager.instance.PlayIndyAudio(SoundManager.instance.whipSound);
+                        //SoundManager.instance.PlaySuccessAudio(SoundManager.instance.successMusic);
                         RodentAI.instance.WasWhipped = true;
 
                     }
@@ -61,6 +65,7 @@ public class InventoryUseItem : MonoBehaviour
                             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                             currentItem = null;
                             Debug.Log("You used the kerosene lamp on the spiral design!");
+                            SoundManager.instance.PlaySuccessAudio(SoundManager.instance.successMusic);
                             // Do the pour animation
                         }
                         else
