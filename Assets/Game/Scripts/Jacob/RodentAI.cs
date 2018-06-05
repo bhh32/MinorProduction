@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/* Fake the AI, after watching the gameplay video again
-   I noticed that the rodent AI is scripted and faked.
- */
 public class RodentAI : MonoBehaviour
 {
 
@@ -40,7 +37,12 @@ public class RodentAI : MonoBehaviour
     public GameObject currentWaypoint;
 
     // Was the rodent whipped?
-    bool wasWhipped = false;
+    private bool wasWhipped = false;
+    public bool WasWhipped
+    {
+        get { return wasWhipped; }
+        set { wasWhipped = value; }
+    }
 
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
@@ -73,8 +75,13 @@ public class RodentAI : MonoBehaviour
         // Checks the distance between the Indy and the rodent
         currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
 
+        if (currentWaypoint == waypoints[1] && wasWhipped == true)
+        {
+            SetNewDest(whipWaypoint.transform.position);
+
+        }
         // Allows the rodent to run if it can and Indy is close enough
-        if (currentDistance < runDistance && canRun || canRun && wasWhipped)
+        else if (currentDistance < runDistance && canRun || canRun && wasWhipped)
         {
             /* Set the flag to false so that it doesn't continally find a new waypoint to go to
                while Indy is less than the runDistance */
@@ -84,20 +91,16 @@ public class RodentAI : MonoBehaviour
             FindNewPoint();
         }
 
-        if (currentWaypoint.transform.position == waypoints[1].transform.position && wasWhipped == true)
+        if(transform.position == whipWaypoint.transform.position)
         {
-            SetNewDest(whipWaypoint.transform.position);
-            if(transform.position == whipWaypoint.transform.position)
+            float timer = 1.0f;
+            timer -= Time.deltaTime;
+            if(timer <= 0)
             {
-                float timer = 1.0f;
-                timer -= Time.deltaTime;
-                if(timer <= 0)
-                {
-                    Destroy(gameObject);
-                }
+                Debug.Log("Rodent Destroyed!");
+                Destroy(gameObject);
             }
         }
-
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)
             canRun = true;
