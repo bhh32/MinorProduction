@@ -97,7 +97,6 @@ public class RodentAI : MonoBehaviour
             FindNewPoint();
         }
 
-
         
 
 
@@ -112,6 +111,7 @@ public class RodentAI : MonoBehaviour
             }
         }
 
+            
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)
             canRun = true;
