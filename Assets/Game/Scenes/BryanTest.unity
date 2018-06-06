@@ -298,6 +298,46 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 7.65
       objectReference: {fileID: 0}
+    - target: {fileID: 33073425266755722, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300012, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33145851304617618, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300008, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33124059399501332, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33144250632238986, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300006, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33447304569151060, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33342224071392976, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300014, guid: ab9ba9864a5f37d409625322932827ad, type: 3}
+    - target: {fileID: 33363079196353410, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300010, guid: 054772a65a874c549b080e2445d4a944, type: 3}
+    - target: {fileID: 33151630029662764, guid: 69d5a95555aea264a8b070bcea273ef6,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300004, guid: 054772a65a874c549b080e2445d4a944, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69d5a95555aea264a8b070bcea273ef6, type: 2}
   m_IsPrefabParent: 0
@@ -873,6 +913,11 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224598030083491428, guid: 454ba00a2b8dd5340bbd408304af0c87,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 454ba00a2b8dd5340bbd408304af0c87, type: 2}

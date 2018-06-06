@@ -73,6 +73,7 @@ public class RodentAI : MonoBehaviour
 	
 	void Update ()
     {
+		indiana = GameObject.FindWithTag ("Indy");
         // Checks the distance between the Indy and the rodent
         currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
 

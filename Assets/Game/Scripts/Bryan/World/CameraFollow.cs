@@ -20,6 +20,7 @@ public class CameraFollow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+		indy = GameObject.FindWithTag ("Indy");
         transform.position = new Vector3(indy.transform.position.x + offsetX, indy.transform.position.y + offsetY, indy.transform.position.z + offsetZ);
 	}
 }
