@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 054772a65a874c549b080e2445d4a944
-timeCreated: 1528149173
+guid: 301424dfe71872c42a9e291415b321ab
+timeCreated: 1528313996
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -33,7 +33,6 @@ ModelImporter:
     2300010: env_exterior_temple_lowpoly
     2300012: env_exterior_treetop_lowpoly
     2300014: env_exterior_treetrunk_lowpoly
-    2300016: //RootNode
     3300000: env_exterior_bush_lowpoly
     3300002: env_exterior_ground_lowpoly
     3300004: env_exterior_plank_lowpoly
@@ -42,7 +41,6 @@ ModelImporter:
     3300010: env_exterior_temple_lowpoly
     3300012: env_exterior_treetop_lowpoly
     3300014: env_exterior_treetrunk_lowpoly
-    3300016: //RootNode
     4300000: env_exterior_snaketree_lowpoly
     4300002: env_exterior_plank_lowpoly
     4300004: env_exterior_treetrunk_lowpoly
@@ -51,14 +49,8 @@ ModelImporter:
     4300010: env_exterior_treetop_lowpoly
     4300012: env_exterior_bush_lowpoly
     4300014: env_exterior_temple_lowpoly
-    4300016: env_exterior_lowpoly
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 313d8d37436e0ca43bc8df6ceff764ad, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
