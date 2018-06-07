@@ -88,7 +88,7 @@ public class UIActionManager : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 
-			if(Physics.Raycast(ray, out hit, 100f /*insert ground layer here*/))
+			if(Physics.Raycast(ray, out hit, 100f))
 			{	
                 PlayerController.instance.WalkToUI(hit.point);
 			}

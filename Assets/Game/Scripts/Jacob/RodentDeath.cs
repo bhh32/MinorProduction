@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class RodentDeath : MonoBehaviour {
-
-    //If you have not looked at the new ReadMe I made please read it before continuing.
-
-
-    
+public class RodentDeath : MonoBehaviour 
+{
     //This array will hold all the objects that will be creating the cutscene (They should all be
     // set to NOT ACTIVE when the scene starts.
     public GameObject[] cutsceneObjects;

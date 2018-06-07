@@ -7,6 +7,7 @@ public class DestroyRodent : MonoBehaviour
     [SerializeField] GameObject mainCamera;
     [SerializeField] GameObject cutSceneCam;
     [SerializeField] Animator cutSceneAnimation;
+    [SerializeField] GameObject rodentToolTip;
 
     void OnTriggerStay(Collider other)
     {
@@ -19,6 +20,7 @@ public class DestroyRodent : MonoBehaviour
             cutSceneAnimation.SetBool("canPlay", true);
 
             Destroy(other.gameObject);
+            Destroy(rodentToolTip);
             Destroy(gameObject);
         }
     }
