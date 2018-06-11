@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class DestroyRodent : MonoBehaviour 
 {
-    [SerializeField] GameObject mainCamera;
-    [SerializeField] GameObject cutSceneCam;
-    [SerializeField] Animator cutSceneAnimation;
+    [SerializeField] GameObject rodentCutscene;
     [SerializeField] GameObject rodentToolTip;
 
     void OnTriggerStay(Collider other)
@@ -14,13 +12,7 @@ public class DestroyRodent : MonoBehaviour
         if (other.CompareTag("Jungle Rodent") && RodentAI.instance.WasWhipped)
         {
             Destroy(other.gameObject, 1f);
-            cutSceneCam.SetActive(true);
-            mainCamera.SetActive(false);
-
-
-            cutSceneAnimation.SetBool("canPlay", true);
-
-            Destroy(other.gameObject);
+            rodentCutscene.SetActive(true);
             Destroy(rodentToolTip);
             Destroy(gameObject);
         }

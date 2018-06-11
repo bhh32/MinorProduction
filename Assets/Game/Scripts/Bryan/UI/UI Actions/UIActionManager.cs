@@ -58,14 +58,21 @@ public class UIActionManager : MonoBehaviour
             }
 		}
 
-        if (isActionSelected || Input.GetMouseButtonUp(0) && actionSelectionCanvas.activeSelf)
+        if (isActionSelected && actionSelectionCanvas.activeSelf)
 		{
 			isActionSelected = false;
-			actionSelectionCanvas.SetActive(false);
-		}
+        }
 
         DoAction_Walk();
 	}
+
+    void LateUpdate()
+    {
+        if(Input.GetMouseButtonUp(0))
+        {
+            actionSelectionCanvas.SetActive(false);
+        }
+    }
 
     #region Walk Action Methods
     // Set the current action to walk
