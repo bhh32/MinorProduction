@@ -73,7 +73,6 @@ public class RodentAI : MonoBehaviour
 	
 	void Update ()
     {
-		indiana = GameObject.FindWithTag ("Indy");
         // Checks the distance between the Indy and the rodent
         currentDistance = Vector3.Distance(transform.position, indiana.transform.position);
 
@@ -86,7 +85,6 @@ public class RodentAI : MonoBehaviour
                 Destroy(gameObject, 1);
             }
         }
-
         // Allows the rodent to run if it can and Indy is close enough
         else if (currentDistance < runDistance && canRun || canRun && wasWhipped)
         {
@@ -98,9 +96,7 @@ public class RodentAI : MonoBehaviour
             FindNewPoint();
         }
 
-        
-
-
+        // *Note from Bryan: This condition will never happen with the above else if statement!
         if(transform.position == whipWaypoint.transform.position)
         {
             float timer = 1.0f;
@@ -111,7 +107,6 @@ public class RodentAI : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
             
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)

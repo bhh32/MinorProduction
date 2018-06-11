@@ -12,7 +12,8 @@ public class DestroyRodent : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Jungle Rodent") && RodentAI.instance.WasWhipped)
-        {      
+        {
+            Destroy(other.gameObject, 1f);
             cutSceneCam.SetActive(true);
             mainCamera.SetActive(false);
 
