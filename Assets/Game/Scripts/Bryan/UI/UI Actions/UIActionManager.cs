@@ -35,33 +35,36 @@ public class UIActionManager : MonoBehaviour
 
     //[SerializeField] Text speechText;
     [SerializeField] CharacterTalkText charTalkText;
-
+     public bool isTalking = false;
     [SerializeField] GameObject currentSelectedCharacter;
 	
     #endregion
 
 	void Update () 
 	{
-        Vector3 clickPosition = Input.mousePosition;
+        if (!isTalking)
+        {
+            Vector3 clickPosition = Input.mousePosition;
     
-		if (Input.GetMouseButtonUp(1))
-		{
-            if(actionSelectionButtons.transform.position != clickPosition)
-                actionSelectionButtons.transform.position = clickPosition;
-            
-            if (!actionSelectionCanvas.activeSelf)
-                actionSelectionCanvas.SetActive(true);
-            else
+            if (Input.GetMouseButtonUp(1))
             {
-                actionSelectionCanvas.SetActive(false);
-                canWalk = true;
+                if (actionSelectionButtons.transform.position != clickPosition)
+                    actionSelectionButtons.transform.position = clickPosition;
+            
+                if (!actionSelectionCanvas.activeSelf)
+                    actionSelectionCanvas.SetActive(true);
+                else
+                {
+                    actionSelectionCanvas.SetActive(false);
+                    canWalk = true;
+                }
             }
-		}
 
-        if (isActionSelected && actionSelectionCanvas.activeSelf)
-			isActionSelected = false;
+            if (isActionSelected && actionSelectionCanvas.activeSelf)
+                isActionSelected = false;
 
-        DoAction_Walk();
+            DoAction_Walk();
+        }
 	}
 
     void LateUpdate()
@@ -368,7 +371,11 @@ public class UIActionManager : MonoBehaviour
                 DialogSystemManager.instance.DisableOtherUI();
                 break;
             case "Sophia":
-                // TODO: Sophia Choices
+                if (DialogSystemManager.instance.isSecondComplete)
+                {
+                    DialogSystemManager.instance.UpdateToThirdPuzzleChoices();
+                    DialogSystemManager.instance.DisableOtherUI();
+                }
                 break;
             default:
                 Debug.LogError("Something went wrong with talking!");
