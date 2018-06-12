@@ -16,37 +16,29 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
-    //Player NavMesh
-    private static NavMeshAgent agent;
+    public float walkspeed;
+    Vector3 moveDirection;
 
     public bool canTeleport = true;
-
-    //Gets NavMesh
-	void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
 	
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(0) && UIActionManager.instance.canWalk)
-        {
-            //Gets Mouse position relitive to the world from the camera
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            
-            if (Physics.Raycast(ray, out hit, 100))
-                WalkToUI(hit.point);
-        }
-        else if (UIActionManager.instance.canWalk)
-        {
-            WalkToUI(transform.position);
-        }
+        float horizontalMovement = Input.GetAxisRaw("Horizontal");
+        float verticalMovement = Input.GetAxisRaw("Vertical");
+
+        moveDirection = (horizontalMovement * transform.right
+            + verticalMovement * transform.forward);
     }
 
-    // For use with Walk-To in the UI
-    public void WalkToUI(Vector3 Destination)
+    void FixedUpdate()
     {
-        agent.SetDestination(Destination);
+        Move();
+    }
+
+    void Move()
+    {
+
+        transform.Translate(moveDirection.x * walkspeed * Time.deltaTime, 0f, 
+            moveDirection.z * walkspeed * Time.deltaTime);
     }
 }

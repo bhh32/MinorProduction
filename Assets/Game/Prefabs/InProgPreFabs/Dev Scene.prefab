@@ -730,7 +730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1193138506009258
 GameObject:
   m_ObjectHideFlags: 1
@@ -2287,7 +2287,7 @@ GameObject:
   - component: {fileID: 4303535683539466}
   - component: {fileID: 114048808563992304}
   m_Layer: 0
-  m_Name: MainGameCam
+  m_Name: CM MainGameCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8946,10 +8946,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!61 &61037050326064166
 BoxCollider2D:
@@ -11431,6 +11431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb937b1c2b23cf4c8d4caddf7026d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkspeed: 5
   canTeleport: 1
 --- !u!114 &114270000139249186
 MonoBehaviour:
@@ -14410,7 +14411,7 @@ NavMeshAgent:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1123130337126586}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 1.0332543
   m_Speed: 3.5
@@ -45729,6 +45730,8 @@ PlayableDirector:
     value: {fileID: 1541763561743258}
   - key: {fileID: 114660460305337008, guid: 6661e88e77795de4e8169fc811aff93a, type: 2}
     value: {fileID: 1513870963730804}
+  - key: {fileID: 0}
+    value: {fileID: 1932502625335012}
   m_ExposedReferences:
     m_References:
     - f48b299da3a15e749a9abbb19c511bad: {fileID: 114048808563992304}
