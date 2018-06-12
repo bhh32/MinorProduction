@@ -2524,7 +2524,7 @@ GameObject:
   - component: {fileID: 4562060488320304}
   - component: {fileID: 65379956600353584}
   - component: {fileID: 114250325716653094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Whip Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633827159123112}
-  m_LocalRotation: {x: 0.2837324, y: -0.13971826, z: 0.11402107, w: 0.941793}
+  m_LocalRotation: {x: 0.2837324, y: -0.13971826, z: 0.11402106, w: 0.94179296}
   m_LocalPosition: {x: -97, y: 21.4, z: 37.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11380,7 +11380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodentCutscene: {fileID: 1541763561743258}
-  rodentToolTip: {fileID: 0}
+  rodentToolTip: {fileID: 1547850520513568}
 --- !u!114 &114254351001338388
 MonoBehaviour:
   m_ObjectHideFlags: 1

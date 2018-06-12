@@ -7,14 +7,34 @@ public class DestroyRodent : MonoBehaviour
     [SerializeField] GameObject rodentCutscene;
     [SerializeField] GameObject rodentToolTip;
 
-    void OnTriggerStay(Collider other)
+    GameObject rodent;
+
+    void TriggerRodentCutscene()
     {
-        if (other.CompareTag("Jungle Rodent") && RodentAI.instance.WasWhipped)
+        RodentAI.instance.OnWhipped -= TriggerRodentCutscene;
+        Destroy(rodent.gameObject, 0.5f);
+        rodentCutscene.SetActive(true);
+        Destroy(rodentToolTip);
+        Destroy(gameObject);
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Jungle Rodent"))
         {
-            Destroy(other.gameObject, 1f);
-            rodentCutscene.SetActive(true);
-            Destroy(rodentToolTip);
-            Destroy(gameObject);
+            rodent = other.gameObject;
+
+            RodentAI.instance.OnWhipped += TriggerRodentCutscene;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject == rodent)
+        {
+            RodentAI.instance.OnWhipped -= TriggerRodentCutscene;
+            rodent = null;
         }
     }
 }
