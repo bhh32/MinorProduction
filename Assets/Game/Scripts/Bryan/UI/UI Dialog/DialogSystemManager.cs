@@ -30,16 +30,14 @@ public class DialogSystemManager : MonoBehaviour
 
     [Header("Character Speech")]
     [SerializeField] CharacterTalkText indy;
-    [SerializeField] TMP_Text sophiaSpeech;
     [SerializeField] CharacterTalkText sophia;
-    [SerializeField] TMP_Text sternhartSpeech;
     [SerializeField] CharacterTalkText sternhart;
-    [SerializeField] TMP_Text parrotSpeech;
     [SerializeField] CharacterTalkText parrot;
 
     public bool firstEncounter = true;
     bool canTellTitle = false;
     bool titleTold = false;
+    public bool isSecondComplete = false;
 
     #endregion
 
@@ -49,9 +47,11 @@ public class DialogSystemManager : MonoBehaviour
         {
             newChoices.Add(choice.GetComponentInChildren<TMP_Text>());
         }
-
+            
         StartDialog();
     }
+
+    #region Updating Dialog Choices and Dialog Choice Selection
 
     public void UpdateCurrentChoice(GameObject clickedButton)
     {
@@ -60,48 +60,60 @@ public class DialogSystemManager : MonoBehaviour
 
     public void DialogChoices()
     {
-        // This switch statement checks what the choice text was and updates things appropriately.
+        if (!isSecondComplete)
+            SecondPuzzleDialogChoices();
+        else
+            ThirdPuzzleDialogChoices();
+    }
+
+    #endregion
+
+    #region Puzzle Dialog Systems
+
+    public void SecondPuzzleDialogChoices()
+    {
+    // This switch statement checks what the choice text was and updates things appropriately.
         switch (currentChoice.text)
         {
             case "Thanks. We'd just like to look around.":
-                // Update Indy's speech text.
+            // Update Indy's speech text.
                 UpdateIndy();
 
-                // End the encounter.
+            // End the encounter.
                 EndEncounter();
                 break;
             case "No thanks, Mr... ?":
-                // Ensures we don't go back to the dialog for the first encounter.
+            // Ensures we don't go back to the dialog for the first encounter.
                 firstEncounter = false;
 
-                // Update Indy's speech text.
+            // Update Indy's speech text.
                 UpdateIndy();
 
-                // Update Sternhart's speech text.
+            // Update Sternhart's speech text.
                 UpdateSternhart("Charles Sternhart, Phd., Independant thinker, researcher, and merchant.", 1.5f);
 
-                // Update the choices past the first encounter choices.
+            // Update the choices past the first encounter choices.
                 ContinuedEncounterDialog();
                 break;
             case "What can you tell us about 'Plato's Lost Dialogue'?":
-                // Update Indy's speech text.
+            // Update Indy's speech text.
                 UpdateIndy();
 
-                // Update Sternhart's speech text.
+            // Update Sternhart's speech text.
                 UpdateSternhart("I'm the only one who translated it. I can tell you that. I'd worry you were here to steal my last copy, but someone called 'Mr. Smith' beat you to it.", 1.5f);
 
-                // Update Indy's text again using overloaded Method.
+            // Update Indy's text again using overloaded Method.
                 UpdateIndy("Oh, no!", 3f);
 
-                // Reset the current choices' text to the new value.
+            // Reset the current choices' text to the new value.
                 currentChoice.text = "What can you tell us about 'Mr. Smith'?";
                 break;
             case "What can you tell us about the temple?":
                 UpdateIndy();
                 UpdateSternhart("Glad you asked! The locals claim it was built by an indian village. " +
-                                "Now I ask, does this look like the work by primitive savages, or does it seem much too civilized?", 1.5f);
+                    "Now I ask, does this look like the work by primitive savages, or does it seem much too civilized?", 1.5f);
 
-                // Reset the current choice's text to the new value.
+            // Reset the current choice's text to the new value.
                 currentChoice.text = "Why aren't we allowed inside?";
                 break;
             case "I'm hoping to find some evidence of Atlantis here.":
@@ -128,7 +140,7 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateIndy();
                 UpdateSternhart("Tell me the name of the Lost Dialog of Plato.", 1.5f);
 
-                // Update the dialog choices
+            // Update the dialog choices
                 newChoices[0].text = "The Socrates.";
                 newChoices[1].text = "The Gluteus Maximus.";
                 newChoices[2].text = "The Hippocrates.";
@@ -139,10 +151,10 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateParrot("Socrates!", 1f);
                 UpdateSternhart("You're no student of Atlantis then.", 1f);
 
-                // End the encounter
+            // End the encounter
                 EndEncounter();
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "The Gluteus Maximus":
@@ -150,10 +162,10 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateParrot("Maximus!", 1f);
                 UpdateSternhart("You're no student of Atlantis then.", 1f);
 
-                // End the encounter
+            // End the encounter
                 EndEncounter();
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "The Hippocrates.":
@@ -161,10 +173,10 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateParrot("Hippocrite!", 1f);
                 UpdateSternhart("You're no student of Atlantis then.", 1f);
 
-                // End the ecounter
+            // End the ecounter
                 EndEncounter();
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "I don't know the title.":
@@ -172,33 +184,33 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateParrot("Title!", 1f);
                 UpdateSternhart("You're no student of Atlantis then.", 1f);
 
-                // End the encounter
+            // End the encounter
                 EndEncounter();
 
-                // Set that the parrot can tell Indy the title.
+            // Set that the parrot can tell Indy the title.
                 canTellTitle = true;
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "Polly wanna cracker?":
                 UpdateIndy();
                 UpdateParrot("Cracker!", 1f);
 
-                // End the encounter
+            // End the encounter
                 EndEncounter();
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "Echo.":
                 UpdateIndy();
                 UpdateParrot("Echo!", 1f);
 
-                // End the encounter
+            // End the encounter
                 EndEncounter();
 
-                // Reset the dialog choices
+            // Reset the dialog choices
                 ResetDialog();
                 break;
             case "Hullabaloo.":
@@ -218,7 +230,7 @@ public class DialogSystemManager : MonoBehaviour
                 }
                 else
                     UpdateParrot("Sqwak!", 1.5f);
-                
+
                 EndEncounter();
 
                 ResetDialog();
@@ -248,9 +260,9 @@ public class DialogSystemManager : MonoBehaviour
                 UpdateSternhart("That's it!", 2f);
                 UpdateParrot("That's it! Squawk!", 2.5f);
                 UpdateSternhart("Well, now perhaps I was wrong. You seem to know what you're doing. Walk this way please.", 3f);
-                dialogCanvas.SetActive(false);
-                inventory.SetActive(true);
-                // *Note: Start Cut scene to enter the temple.
+                isSecondComplete = true;
+                EndEncounter();
+            // *Note: Start Cut scene to enter the temple.
                 break;
             case "The Persepolis.":
                 UpdateIndy();
@@ -260,13 +272,42 @@ public class DialogSystemManager : MonoBehaviour
                 break;
             default:
                 if (currentChoice.text != "")
-                    Debug.LogError("Something went wrong in the dialog system!");
-
+                    Debug.LogError("Something went wrong in the second puzzle dialog system!");
                 break;
         }
     }
 
+    public void ThirdPuzzleDialogChoices()
+    {
+        switch (currentChoice.text)
+        {
+            case "What do we do now?":
+                UpdateIndy();
+                UpdateSophia("I don't know, you're the expert here.", 2f);
+                break;
+            case "Could you talk to Sternhart and keep him occupied?":
+                UpdateIndy();
+                UpdateSophia("Ok.", 1.5f);
+                // Play animation of Sophia asking Sternhart to talk.
+                UpdateSophia("Dr. Sternhart, I'd like to speak to you.", 3f);
+                // Play animation of Sternhart and Sophia walking away to talk, and of them talking.
 
+                EndEncounter();
+                break;
+            case "Let's keep looking.":
+                UpdateIndy();
+                UpdateSophia("Ok.", 1f);
+
+                EndEncounter();
+                break;
+            default:
+                if (currentChoice.text != "")
+                    Debug.LogError("Something went wrong with the third puzzle dialog system.");
+                break;
+        }
+    }
+
+    #endregion
 
     #region Helper Methods
 
@@ -276,6 +317,14 @@ public class DialogSystemManager : MonoBehaviour
         newChoices[1].text = "Echo.";
         newChoices[2].text = "Hullabaloo.";
         newChoices[3].text = "Title?";
+    }
+
+    public void UpdateToThirdPuzzleChoices()
+    {
+        newChoices[0].text = "What do we do now?";
+        newChoices[1].text = "Could you talk to Sternhart and keep him occupied?";
+        newChoices[2].text = "Let's keep looking.";
+        newChoices[3].text = "";
     }
 
     public void StartDialog()
@@ -304,6 +353,7 @@ public class DialogSystemManager : MonoBehaviour
 
     public void DisableOtherUI()
     {
+        UIActionManager.instance.isTalking = true;
         dialogCanvas.SetActive(true);
         inventory.SetActive(false);
         actions.SetActive(false);
@@ -358,6 +408,7 @@ public class DialogSystemManager : MonoBehaviour
 
     void EndEncounter()
     {
+        UIActionManager.instance.isTalking = false;
         dialogCanvas.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

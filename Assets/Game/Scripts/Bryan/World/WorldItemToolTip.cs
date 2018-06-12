@@ -27,10 +27,16 @@ public class WorldItemToolTip : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            if (hit.collider.CompareTag("Jungle Rodent"))
-                toolTip.enabled = true;
-            else
-                toolTip.enabled = false;
+            switch(hit.collider.name)
+            {
+                case "Jungle Rodent":
+                case "Kerosene Lamp":
+                    toolTip.enabled = true;
+                    break;
+                default:
+                    toolTip.enabled = false;
+                    break;
+            }
         }
 
         toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
