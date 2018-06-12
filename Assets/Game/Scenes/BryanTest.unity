@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &732283964
+--- !u!1001 &612803528
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,16 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114366951880176036, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366951880176036, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114169014928702352, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -182,22 +172,12 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114366951880176036, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114366951880176036, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -208,6 +188,36 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114337039660604962, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025998647752284, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114025998647752284, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -232,16 +242,12 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1063884618145086, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
-      propertyPath: m_Name
-      value: Dev Scene
-      objectReference: {fileID: 0}
-    - target: {fileID: 114025998647752284, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114798855329829912, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114025998647752284, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114798855329829912, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -252,6 +258,16 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114315238420662084, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725952390629946, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725952390629946, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
