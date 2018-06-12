@@ -35,6 +35,8 @@ public class UIActionManager : MonoBehaviour
 
     //[SerializeField] Text speechText;
     [SerializeField] CharacterTalkText charTalkText;
+
+    [SerializeField] GameObject currentSelectedCharacter;
 	
     #endregion
 
@@ -48,9 +50,7 @@ public class UIActionManager : MonoBehaviour
                 actionSelectionButtons.transform.position = clickPosition;
             
             if (!actionSelectionCanvas.activeSelf)
-            {
                 actionSelectionCanvas.SetActive(true);
-            }
             else
             {
                 actionSelectionCanvas.SetActive(false);
@@ -59,19 +59,15 @@ public class UIActionManager : MonoBehaviour
 		}
 
         if (isActionSelected && actionSelectionCanvas.activeSelf)
-		{
 			isActionSelected = false;
-        }
 
         DoAction_Walk();
 	}
 
     void LateUpdate()
     {
-        if(Input.GetMouseButtonUp(0))
-        {
+        if (Input.GetMouseButtonUp(0))
             actionSelectionCanvas.SetActive(false);
-        }
     }
 
     #region Walk Action Methods
@@ -359,9 +355,25 @@ public class UIActionManager : MonoBehaviour
         isActionSelected = true;
     }
 
-    public void DoAction_TalkTo(GameObject clickedObj)
+    public void DoAction_TalkTo(GameObject clickedCharacter)
     {
         // TODO: Start Dialog System
+        switch (clickedCharacter.name)
+        {
+            case "Sternhart":
+                DialogSystemManager.instance.DisableOtherUI();
+                break;
+            case "Parrot":
+                DialogSystemManager.instance.UpdateToParrotChoices();
+                DialogSystemManager.instance.DisableOtherUI();
+                break;
+            case "Sophia":
+                // TODO: Sophia Choices
+                break;
+            default:
+                Debug.LogError("Something went wrong with talking!");
+                break;
+        }
 
         canTalkTo = false;
     }
