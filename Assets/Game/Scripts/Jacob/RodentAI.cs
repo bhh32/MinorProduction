@@ -42,8 +42,20 @@ public class RodentAI : MonoBehaviour
     public bool WasWhipped
     {
         get { return wasWhipped; }
-        set { wasWhipped = value; }
+        set
+        {
+            wasWhipped = value;
+
+            OnGameEvent whipped = OnWhipped;
+            if(wasWhipped && whipped != null)
+            {
+                whipped();
+            }
+        }
     }
+
+    // Delegate is called when the rodent is whipped.
+    public OnGameEvent OnWhipped;
 
     // Flag for if the rodent can run or not.
     [SerializeField] bool canRun = true;
@@ -90,7 +102,8 @@ public class RodentAI : MonoBehaviour
         // If Indy is out of range reset the flag to true.
         if (currentDistance > runDistance)
             canRun = true;
-	}
+
+    }
 
     void FindNewPoint()
     {

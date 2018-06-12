@@ -2700,7 +2700,7 @@ GameObject:
   - component: {fileID: 4562060488320304}
   - component: {fileID: 65379956600353584}
   - component: {fileID: 114250325716653094}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Whip Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11864,7 +11864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rodentCutscene: {fileID: 1541763561743258}
-  rodentToolTip: {fileID: 0}
+  rodentToolTip: {fileID: 1547850520513568}
 --- !u!114 &114254351001338388
 MonoBehaviour:
   m_ObjectHideFlags: 1

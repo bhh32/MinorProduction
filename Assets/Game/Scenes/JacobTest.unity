@@ -19489,12 +19489,7 @@ MonoBehaviour:
   - {fileID: 1850665531}
   - {fileID: 518735175}
   mainCamera: {fileID: 334022951}
---- !u!1 &1583456888 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1936082036346288, guid: 4c99ec307867c5146be0980403185671,
-    type: 2}
-  m_PrefabInternal: {fileID: 2103942821}
---- !u!1001 &1700436305
+--- !u!1001 &1502889170
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -19533,36 +19528,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1063884618145086, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
-      propertyPath: m_Name
-      value: Dev Scene
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169014928702352, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114102116142312340, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114169014928702352, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114102116142312340, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114315238420662084, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114315238420662084, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114949994906231932, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114949994906231932, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -19587,42 +19568,22 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114102116142312340, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114315238420662084, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114102116142312340, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114315238420662084, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114568057933180296, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114432530383339120, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114280344367138962, guid: 3080812f41f478e449800e5095e7dd3c,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114280344367138962, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114568057933180296, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -19637,12 +19598,42 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114568057933180296, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114280344367138962, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114568057933180296, guid: 3080812f41f478e449800e5095e7dd3c,
+    - target: {fileID: 114280344367138962, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169014928702352, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169014928702352, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949994906231932, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949994906231932, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660309563156564, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -19650,6 +19641,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1583456888 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1936082036346288, guid: 4c99ec307867c5146be0980403185671,
+    type: 2}
+  m_PrefabInternal: {fileID: 2103942821}
 --- !u!1 &1708491011
 GameObject:
   m_ObjectHideFlags: 0
