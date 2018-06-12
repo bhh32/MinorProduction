@@ -64,6 +64,8 @@ public class WorldItemUse : MonoBehaviour
                 else if (action.canOpen)
                     // ... if it is Open the object if you can...
                     action.DoAction_Open(currentItem);
+                else if (action.canTalkTo)
+                    action.DoAction_TalkTo(hit.collider.gameObject);
                 
             }
         }

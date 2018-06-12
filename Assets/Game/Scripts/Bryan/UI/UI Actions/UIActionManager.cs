@@ -359,7 +359,7 @@ public class UIActionManager : MonoBehaviour
         isActionSelected = true;
     }
 
-    public void DoAction_TalkTo()
+    public void DoAction_TalkTo(GameObject clickedObj)
     {
         // TODO: Start Dialog System
 

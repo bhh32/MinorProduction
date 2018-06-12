@@ -4429,7 +4429,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468691869678538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.249998, y: 2.0599995, z: 9.2}
+  m_LocalPosition: {x: -11.42, y: 2.0599995, z: 8.92}
   m_LocalScale: {x: 2.0663621, y: 1, z: 2.17325}
   m_Children: []
   m_Father: {fileID: 4633646118448608}
@@ -13161,7 +13161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809af91f25442eb489a21e34eb8a0cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rodentCutscene: {fileID: 0}
+  rodentCutscene: {fileID: 1423091592742548}
   rodentToolTip: {fileID: 1303307891401948}
 --- !u!114 &114894181047528358
 MonoBehaviour:
