@@ -96,7 +96,7 @@ public class UIActionManager : MonoBehaviour
 
 			if(Physics.Raycast(ray, out hit, 100f))
 			{	
-                PlayerController.instance.WalkToUI(hit.point);
+             //   PlayerController.instance.WalkToUI(hit.point);
 			}
 
             canWalk = false;
