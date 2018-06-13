@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        Rotate();
         Move();
     }
 
@@ -40,5 +41,10 @@ public class PlayerController : MonoBehaviour {
 
         transform.Translate(moveDirection.x * walkspeed * Time.deltaTime, 0f, 
             moveDirection.z * walkspeed * Time.deltaTime);
+    }
+
+    void Rotate()
+    {
+        transform.rotation = Quaternion.LookRotation(moveDirection);
     }
 }
