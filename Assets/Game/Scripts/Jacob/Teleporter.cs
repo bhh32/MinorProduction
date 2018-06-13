@@ -12,8 +12,12 @@ public class Teleporter : MonoBehaviour
 	[SerializeField] GameObject clearingEntranceMovePoint;
     [SerializeField] GameObject caveRoundABoutMovePoint;
     [SerializeField] GameObject caveFarRightMovePoint;
+    [SerializeField] GameObject insideTempleMovePoint;
+    [SerializeField] GameObject clearingMovePoint;
 
 	[SerializeField] NavMeshAgent indyAgent;
+    [SerializeField] GameObject clearingCam;
+    [SerializeField] GameObject insideCam;
 
     // Checking for collision with object to be teleported
 	void OnTriggerEnter(Collider other)
@@ -23,34 +27,64 @@ public class Teleporter : MonoBehaviour
 		{
 			// Ensure there isn't a teleport loop...
 			PlayerController.instance.canTeleport = false;
-
-			indyAgent.Warp(teleportLocation.transform.position);
+            indyAgent = other.GetComponent<NavMeshAgent>();
+			
 
 			switch(teleportLocation.name)
 			{
 				case "Jungle Entrance":
+                    indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(jungleEntranceMovePoint.transform.position);
 					break;
 				case "Cave Entrance":
+                    indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(caveEntranceMovePoint.transform.position);
 					break;
 				case "Cave Exit":
+                    indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(caveExitMovePoint.transform.position);
 					break;
 				case "Clearing Entrance":
+                    indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(clearingEntranceMovePoint.transform.position);
 					break;
                 case "Cave Left":
                 case "Cave Right":
+                    indyAgent.Warp(teleportLocation.transform.position);
                     indyAgent.SetDestination(caveRoundABoutMovePoint.transform.position);
                     break;
                 case "Cave Far Right":
+                    indyAgent.Warp(teleportLocation.transform.position);
                     indyAgent.SetDestination(caveFarRightMovePoint.transform.position);
+                    break;
+                case "Inside Temple WarpTo Location":
+                    if (DialogSystemManager.instance.isSecondComplete)
+                    {
+                        insideCam.SetActive(true);
+                        clearingCam.SetActive(false);
+                        indyAgent.enabled = false;
+                        indyAgent.Warp(teleportLocation.transform.position);
+                        StartCoroutine(SetDestDelay(insideTempleMovePoint, .5f));
+                    }
+                    break;
+                case "Clearing WarpTo Location":
+                    clearingCam.SetActive(true);
+                    insideCam.SetActive(false);
+                    indyAgent.enabled = false;
+                    indyAgent.Warp(teleportLocation.transform.position);
+                    StartCoroutine(SetDestDelay(clearingMovePoint, .5f));
                     break;
 				default:
 					Debug.LogError("Something went wrong with teleporting!" + gameObject.name);
 					break;
 			}
 		}
+    }
+
+    IEnumerator SetDestDelay(GameObject waypoint, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        indyAgent.enabled = true;
+        indyAgent.SetDestination(waypoint.transform.position);
     }
 }

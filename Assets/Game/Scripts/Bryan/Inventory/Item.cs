@@ -29,6 +29,8 @@ public class Item : ScriptableObject
     public bool hasBeenPulled = false;
     public bool isPushable = false;
     public bool hasBeenPushed = false;
+    public bool isUsable = false;
+    public bool hasBeenUsed = false;
 
     public virtual void GameObjUpdate(GameObject newOrigGameObj, GameObject newModGameObj, GameObject parent)
     {}

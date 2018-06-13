@@ -12,6 +12,7 @@ public class ItemPickUp : MonoBehaviour
     }
 
     [SerializeField] InventoryUIManager inventoryUIMan;
+    [SerializeField] CharacterTalkText indy;
 
     void Awake()
     {
@@ -33,8 +34,38 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                    UIActionManager.instance.DoAction_Pickup(item);
-                    Destroy(gameObject);
+                    Debug.Log(hit.collider.gameObject.name);
+                    switch (item.name)
+                    {
+                        case "Spiral Design":
+                            if (item.isUsable)
+                            {
+                                // Do use animation.
+                                UIActionManager.instance.DoAction_Pickup(item);
+                                Destroy(gameObject);
+                            }
+                            else
+                            {
+                                indy.TextUpdate("I need something to eat the tarnish to loosen it first.");
+                                indy.isTextEnabled = true;
+                            }
+                            break;
+                        case "Kerosene Lamp":
+                            if (item.isUsable)
+                            {
+                                UIActionManager.instance.DoAction_Pickup(item);
+                                Destroy(gameObject);
+                            }
+                            else
+                            {
+                                // Do Sternhart Animation to interrupt indy from picking up the lamp.
+                                Debug.Log("Sternhart comes out to stop Indy from taking lamp.");
+                            }
+                            break;
+                        default:
+                            
+                            break;
+                    }
                 }
             }
         }

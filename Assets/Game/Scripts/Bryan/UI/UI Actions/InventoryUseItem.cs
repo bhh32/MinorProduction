@@ -17,8 +17,6 @@ public class InventoryUseItem : MonoBehaviour
     public Item currentItem;
     [SerializeField] CharacterTalkText indyTalkText;
 
-
-
     public void Use(GameObject clickedObj)
     {
         if (currentItem != null)
@@ -35,7 +33,6 @@ public class InventoryUseItem : MonoBehaviour
                         SoundManager.instance.PlayIndyAudio(SoundManager.instance.whipSound);
                         //SoundManager.instance.PlaySuccessAudio(SoundManager.instance.successMusic);
                         RodentAI.instance.WasWhipped = true;
-
                     }
                     else
                     {
@@ -64,7 +61,7 @@ public class InventoryUseItem : MonoBehaviour
                         {
                             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                             currentItem = null;
-                            Debug.Log("You used the kerosene lamp on the spiral design!");
+                            clickedObj.GetComponent<ItemPickUp>().Item.isUsable = true;
                             SoundManager.instance.PlaySuccessAudio(SoundManager.instance.successMusic);
                             // Do the pour animation
                         }
@@ -84,7 +81,7 @@ public class InventoryUseItem : MonoBehaviour
                         currentItem = null;
                         if (clickedObj.CompareTag("Spiral Design"))
                         {
-                            indyTalkText.TextUpdate("It needs to be open before I use it.");
+                            indyTalkText.TextUpdate("I need to open it first!");
                             indyTalkText.isTextEnabled = true;
                         }
                         else

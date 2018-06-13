@@ -31,6 +31,8 @@ public class WorldItemToolTip : MonoBehaviour
             {
                 case "Jungle Rodent":
                 case "Kerosene Lamp":
+                case "env_exterior_snaketree_lowpoly":
+                case "SnakeProp":
                     toolTip.enabled = true;
                     break;
                 default:
