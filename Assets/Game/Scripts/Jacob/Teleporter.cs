@@ -62,29 +62,18 @@ public class Teleporter : MonoBehaviour
                     {
                         insideCam.SetActive(true);
                         clearingCam.SetActive(false);
-                        indyAgent.enabled = false;
                         indyAgent.Warp(teleportLocation.transform.position);
-                        StartCoroutine(SetDestDelay(insideTempleMovePoint, .5f));
                     }
                     break;
                 case "Clearing WarpTo Location":
                     clearingCam.SetActive(true);
                     insideCam.SetActive(false);
-                    indyAgent.enabled = false;
                     indyAgent.Warp(teleportLocation.transform.position);
-                    StartCoroutine(SetDestDelay(clearingMovePoint, .5f));
                     break;
 				default:
 					Debug.LogError("Something went wrong with teleporting!" + gameObject.name);
 					break;
 			}
 		}
-    }
-
-    IEnumerator SetDestDelay(GameObject waypoint, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        indyAgent.enabled = true;
-        indyAgent.SetDestination(waypoint.transform.position);
     }
 }

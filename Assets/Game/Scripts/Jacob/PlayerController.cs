@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
     public float walkspeed;
     Vector3 moveDirection;
 
+    [SerializeField] IndyAnimController indyAnim;
+    [SerializeField] Rigidbody rb;
+
     public bool canTeleport = true;
 	
 	void Update ()
@@ -26,13 +29,14 @@ public class PlayerController : MonoBehaviour {
         float horizontalMovement = Input.GetAxisRaw("Horizontal") * walkspeed * Time.deltaTime;
         float verticalMovement = Input.GetAxisRaw("Vertical") * walkspeed * Time.deltaTime;
 
-        moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement );
-    }
+        indyAnim.WalkAnim();
+        moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement);
 
-    void FixedUpdate()
-    {
-        Rotate();
-        Move();
+        if (horizontalMovement != 0f || verticalMovement != 0f)
+        {
+            Rotate();
+            Move();
+        }
     }
 
     void Move()
