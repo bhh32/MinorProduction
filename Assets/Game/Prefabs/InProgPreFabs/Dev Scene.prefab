@@ -4554,7 +4554,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624359554363654}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.025981715, y: -0.0000003018518, z: -0.0000000043235535, w: -0.99966246}
   m_LocalPosition: {x: -54.34, y: 21.099998, z: -23.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5527,7 +5527,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1689566679090022}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.025981715, y: -0.0000003018518, z: -0.0000000043235535, w: -0.99966246}
   m_LocalPosition: {x: -54.34, y: 21.099998, z: -23.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7284,7 +7284,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 92cb611b4fac2304a816402d8b2c4833, type: 2}
+  - {fileID: 2100000, guid: 56c8492ec07a45d44a9b3ea7ab9c8587, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8807,7 +8807,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1123130337126586}
-  m_Mesh: {fileID: 4300004, guid: 521e75f98a169a0409711bdbf90c1b5c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: f9f67b7336680124ebfeeadb3e403804, type: 3}
 --- !u!33 &33165273861692136
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -10815,7 +10815,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 1
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 4800405567749076}
   m_Follow: {fileID: 4800405567749076}
   m_Lens:
     FieldOfView: 40
@@ -10973,17 +10973,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 2.51, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 10
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 4.85
+  m_VerticalDamping: 4.57
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_DeadZoneWidth: 0.1
-  m_DeadZoneHeight: 0.1
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.655
+  m_SoftZoneHeight: 0.567
   m_BiasX: 0
   m_BiasY: 0
 --- !u!114 &114097014463489070
@@ -11225,9 +11225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.72, z: -15.19}
-  m_XDamping: 1.5
-  m_YDamping: 1.5
-  m_ZDamping: 1.5
+  m_XDamping: 2.18
+  m_YDamping: 2.64
+  m_ZDamping: 0
   m_PitchDamping: 0
   m_YawDamping: 0
   m_RollDamping: 0
