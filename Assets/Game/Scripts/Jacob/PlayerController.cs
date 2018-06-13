@@ -23,11 +23,10 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        float horizontalMovement = Input.GetAxisRaw("Horizontal");
-        float verticalMovement = Input.GetAxisRaw("Vertical");
+        float horizontalMovement = Input.GetAxisRaw("Horizontal") * walkspeed * Time.deltaTime;
+        float verticalMovement = Input.GetAxisRaw("Vertical") * walkspeed * Time.deltaTime;
 
-        moveDirection = (horizontalMovement * transform.right
-            + verticalMovement * transform.forward);
+        moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement );
     }
 
     void FixedUpdate()
@@ -38,9 +37,7 @@ public class PlayerController : MonoBehaviour {
 
     void Move()
     {
-
-        transform.Translate(moveDirection.x * walkspeed * Time.deltaTime, 0f, 
-            moveDirection.z * walkspeed * Time.deltaTime);
+        transform.Translate(moveDirection, Space.World);
     }
 
     void Rotate()
