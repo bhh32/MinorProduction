@@ -2855,7 +2855,6 @@ GameObject:
   - component: {fileID: 223556146156503044}
   - component: {fileID: 114852635985403866}
   - component: {fileID: 114125216236178390}
-  - component: {fileID: 114416460373881142}
   m_Layer: 0
   m_Name: Indy Speech Canvas
   m_TagString: Untagged
@@ -12998,18 +12997,6 @@ MonoBehaviour:
   indyAgent: {fileID: 195040503962933276}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
---- !u!114 &114416460373881142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760174411852590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd775848161d624eb1e08dc08274f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indy: {fileID: 0}
 --- !u!114 &114417889464128648
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -240,7 +240,11 @@ MonoBehaviour:
   clearingEntranceMovePoint: {fileID: 0}
   caveRoundABoutMovePoint: {fileID: 0}
   caveFarRightMovePoint: {fileID: 0}
+  insideTempleMovePoint: {fileID: 0}
+  clearingMovePoint: {fileID: 0}
   indyAgent: {fileID: 0}
+  clearingCam: {fileID: 0}
+  insideCam: {fileID: 0}
 --- !u!23 &161196178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14818,6 +14822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 1900328072}
+  locationV3: {x: 0, y: 0, z: 0}
 --- !u!23 &945189329
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14921,7 +14926,11 @@ MonoBehaviour:
   clearingEntranceMovePoint: {fileID: 0}
   caveRoundABoutMovePoint: {fileID: 0}
   caveFarRightMovePoint: {fileID: 0}
+  insideTempleMovePoint: {fileID: 0}
+  clearingMovePoint: {fileID: 0}
   indyAgent: {fileID: 0}
+  clearingCam: {fileID: 0}
+  insideCam: {fileID: 0}
 --- !u!23 &954426013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19637,6 +19646,62 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726612166919178, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726612166919178, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114354660488864494, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114354660488864494, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798855329829912, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798855329829912, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725952390629946, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114725952390629946, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123130337126586, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -54.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 21.099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -23.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
@@ -26772,6 +26837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportLocation: {fileID: 945189327}
+  locationV3: {x: 0, y: 0, z: 0}
 --- !u!23 &1900328074
 MeshRenderer:
   m_ObjectHideFlags: 0
