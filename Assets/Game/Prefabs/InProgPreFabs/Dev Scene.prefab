@@ -7996,8 +7996,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD
-=======
 --- !u!23 &23478530152949274
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -8032,7 +8030,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
->>>>>>> e593c733d57a8f91c78acd68cb8a00dff3e668ba
 --- !u!23 &23497881854957890
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -9496,8 +9493,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061765897873688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
 --- !u!33 &33153301042759872
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -9505,7 +9500,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1123130337126586}
   m_Mesh: {fileID: 4300000, guid: f9f67b7336680124ebfeeadb3e403804, type: 3}
->>>>>>> e593c733d57a8f91c78acd68cb8a00dff3e668ba
 --- !u!33 &33165273861692136
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -11501,13 +11495,8 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 1
-<<<<<<< HEAD
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 4265242476872694}
-=======
   m_LookAt: {fileID: 4800405567749076}
   m_Follow: {fileID: 4800405567749076}
->>>>>>> e593c733d57a8f91c78acd68cb8a00dff3e668ba
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -13688,16 +13677,11 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
-<<<<<<< HEAD
---- !u!114 &114416460373881142
-=======
 --- !u!114 &114417889464128648
->>>>>>> e593c733d57a8f91c78acd68cb8a00dff3e668ba
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1760174411852590}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13705,16 +13689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indy: {fileID: 1792639193140182}
-=======
-  m_GameObject: {fileID: 1123130337126586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 658f4db0ba7506d4baf3fa9ca0b02b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  talkingText: {fileID: 114315238420662084}
-  textDelay: 4.5
->>>>>>> e593c733d57a8f91c78acd68cb8a00dff3e668ba
 --- !u!114 &114423372231926540
 MonoBehaviour:
   m_ObjectHideFlags: 1
