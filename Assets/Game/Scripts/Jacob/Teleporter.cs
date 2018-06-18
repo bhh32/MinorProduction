@@ -47,11 +47,13 @@ public class Teleporter : MonoBehaviour
 				case "Cave Exit":
                     indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(caveExitMovePoint.transform.position);
-					break;
+                    cameraFade.SetActive(true);
+                    break;
 				case "Clearing Entrance":
                     indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(clearingEntranceMovePoint.transform.position);
-					break;
+                    cameraFade.SetActive(true);
+                    break;
                 case "Cave Left":
                 case "Cave Right":
                     indyAgent.Warp(teleportLocation.transform.position);
