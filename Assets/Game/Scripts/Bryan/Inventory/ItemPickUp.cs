@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemPickUp : MonoBehaviour 
 {
@@ -34,15 +35,22 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
                     switch (item.name)
                     {
                         case "Spiral Design":
-                            if (item.isUsable)
+                            if (GetInventoryItem("Kerosene Lamp") != null)
                             {
-                                // Do use animation.
-                                UIActionManager.instance.DoAction_Pickup(item);
-                                Destroy(gameObject);
+                                if (GetInventoryItem("Kerosene Lamp").hasBeenUsed)
+                                {
+                                    // Do use animation.
+                                    UIActionManager.instance.DoAction_Pickup(item);
+                                    Destroy(gameObject);
+                                }
+                                else
+                                {
+                                    indy.TextUpdate("I need something to eat the tarnish to loosen it first.");
+                                    indy.isTextEnabled = true;
+                                }
                             }
                             else
                             {
@@ -51,7 +59,7 @@ public class ItemPickUp : MonoBehaviour
                             }
                             break;
                         case "Kerosene Lamp":
-                            if (item.isUsable)
+                            if (DialogSystemManager.instance.isOccupied)
                             {
                                 UIActionManager.instance.DoAction_Pickup(item);
                                 Destroy(gameObject);
@@ -70,4 +78,28 @@ public class ItemPickUp : MonoBehaviour
             }
         }
     }
+
+    #region Helper Methods
+
+    Item GetInventoryItem(string itemToRetrieve)
+    {
+        Item item = null;
+
+        foreach (Button slot in InventoryUIManager.instance.inventorySlots)
+        {
+            var newGottenItem = slot.GetComponent<InventoryAssignedItem>();
+            if (newGottenItem.assignedItem != null)
+            {
+                if (newGottenItem.assignedItem.name == itemToRetrieve)
+                {
+                    item = newGottenItem.assignedItem;
+                    break;
+                }
+            }
+        }
+
+        return item;
+    }
+
+    #endregion
 }

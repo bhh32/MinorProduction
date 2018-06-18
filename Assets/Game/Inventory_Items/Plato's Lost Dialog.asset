@@ -8,12 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ec0758db2563d418010798fd3f0f2f, type: 3}
-  m_Name: Sprial Design
+  m_Script: {fileID: 11500000, guid: a980d5249c2a8bd43868eb5883b32dc6, type: 3}
+  m_Name: Plato's Lost Dialog
   m_EditorClassIdentifier: 
-  name: Spiral Design
-  icon: {fileID: 21300000, guid: dbc2f82d45e19e04a8ca00d38e974123, type: 3}
-  highlightedIcon: {fileID: 21300000, guid: 80154117808212a418d62611e4c7f814, type: 3}
+  name: Plato's Lost Dialog
+  icon: {fileID: 21300000, guid: cebc5c1a0efd3404a904d48db9627a28, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: 318583dc46094eb47a0081a883c744e7, type: 3}
   openedIcon: {fileID: 0}
   openedHiglightedIcon: {fileID: 0}
   originalGameObject: {fileID: 0}
@@ -24,5 +24,5 @@ MonoBehaviour:
   hasBeenPulled: 0
   isPushable: 0
   hasBeenPushed: 0
-  isUsable: 1
+  isUsable: 0
   hasBeenUsed: 0

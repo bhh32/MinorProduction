@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ec0758db2563d418010798fd3f0f2f, type: 3}
+  m_Name: Spiral Design
+  m_EditorClassIdentifier: 
+  name: Spiral Design
+  icon: {fileID: 21300000, guid: dbc2f82d45e19e04a8ca00d38e974123, type: 3}
+  highlightedIcon: {fileID: 21300000, guid: 80154117808212a418d62611e4c7f814, type: 3}
+  openedIcon: {fileID: 0}
+  openedHiglightedIcon: {fileID: 0}
+  originalGameObject: {fileID: 0}
+  modifiedGameObject: {fileID: 0}
+  isOpen: 0
+  isOpenable: 0
+  isPullable: 0
+  hasBeenPulled: 0
+  isPushable: 0
+  hasBeenPushed: 0
+  isUsable: 1
+  hasBeenUsed: 0

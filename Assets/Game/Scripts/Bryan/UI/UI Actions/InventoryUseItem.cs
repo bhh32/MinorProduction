@@ -17,10 +17,14 @@ public class InventoryUseItem : MonoBehaviour
     public Item currentItem;
     [SerializeField] CharacterTalkText indyTalkText;
 
+    [SerializeField] GameObject animalHead;
+    [SerializeField] GameObject animalHeadWithSpiral;
+
     public void Use(GameObject clickedObj)
     {
         if (currentItem != null)
         {
+            Debug.Log(currentItem.name);
             switch (currentItem.name)
             {
                 case "Whip":
@@ -45,7 +49,10 @@ public class InventoryUseItem : MonoBehaviour
                 case "Spiral Design":
                     if (clickedObj.CompareTag("Animal Head"))
                     {
-                        // TODO: Change objectToUseItemWith mesh to "Animal Head w/Spiral Design"
+                        animalHead.SetActive(false);
+                        animalHeadWithSpiral.SetActive(true);
+                        indyTalkText.TextUpdate("Hey it worked!");
+                        indyTalkText.isTextEnabled = true;
                     }
                     else
                     {
@@ -59,11 +66,14 @@ public class InventoryUseItem : MonoBehaviour
                     {
                         if (clickedObj.CompareTag("Spiral Design"))
                         {
+                            currentItem.hasBeenUsed = true;
                             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-                            currentItem = null;
+                            //currentItem = null;
                             clickedObj.GetComponent<ItemPickUp>().Item.isUsable = true;
                             SoundManager.instance.PlaySuccessAudio(SoundManager.instance.successMusic);
                             // Do the pour animation
+                            indyTalkText.TextUpdate("Look! The kerosene ate away the tarnish!");
+                            indyTalkText.isTextEnabled = true;
                         }
                         else
                         {

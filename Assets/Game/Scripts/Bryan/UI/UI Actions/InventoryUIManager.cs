@@ -11,7 +11,7 @@ public class InventoryUIManager : MonoBehaviour
     #endregion
 
     #region Variables
-    [SerializeField] List<Button> inventorySlots = new List<Button>();
+    public List<Button> inventorySlots = new List<Button>();
     [SerializeField] List<Image> inventoryImages = new List<Image>();
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Toggle inventoryToggle;
