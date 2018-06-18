@@ -115,9 +115,16 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
                     else
                     {
                         UpdateSprites(assignedItem);
+
                         indianaJones.TextUpdate("I think I need to open it first.");
                         indianaJones.isTextEnabled = true;
+                        wasUsed = false;
                     }
+                    break;
+                case "Spiral Design":
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                    InventoryUseItem.instance.currentItem = assignedItem;
+                    wasUsed = true;
                     break;
                 default:
                     Debug.LogError("Something in switching the cursor went wrong!" + assignedItem);
@@ -125,12 +132,12 @@ public class InventoryAssignedItem : MonoBehaviour, IPointerClickHandler, IPoint
             }
 
             // Set the assignedItem to null as we've either used it or put it back into the inventory
-            assignedItem = null;
+            //assignedItem = null;
 
             // Set the itemDefaultSprite and itemHighlightedSprite to null, as 
             // we no longer have an item.
-            itemDefaultSprite = null;
-            itemHighlightedSprite = null;
+            //itemDefaultSprite = null;
+            //itemHighlightedSprite = null;
 
             if (wasUsed)
                 UpdateSprites(null);

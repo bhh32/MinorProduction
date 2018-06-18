@@ -38,11 +38,14 @@ public class DialogSystemManager : MonoBehaviour
     bool canTellTitle = false;
     bool titleTold = false;
     public bool isSecondComplete = false;
+    public bool isOccupied { get; private set; }
 
     #endregion
 
     void Start()
     {
+        isOccupied = false;
+
         foreach (GameObject choice in dialogChoices)
         {
             newChoices.Add(choice.GetComponentInChildren<TMP_Text>());
@@ -291,6 +294,7 @@ public class DialogSystemManager : MonoBehaviour
                 // Play animation of Sophia asking Sternhart to talk.
                 UpdateSophia("Dr. Sternhart, I'd like to speak to you.", 3f);
                 // Play animation of Sternhart and Sophia walking away to talk, and of them talking.
+                isOccupied = true;
 
                 EndEncounter();
                 break;

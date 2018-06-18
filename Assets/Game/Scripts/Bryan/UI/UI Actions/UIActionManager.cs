@@ -37,6 +37,9 @@ public class UIActionManager : MonoBehaviour
     [SerializeField] CharacterTalkText charTalkText;
      public bool isTalking = false;
     [SerializeField] GameObject currentSelectedCharacter;
+
+    [Header("Animal Head Object Change Script")]
+    [SerializeField] ChangeObjects animalHeads;
 	
     #endregion
 
@@ -179,6 +182,7 @@ public class UIActionManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100f))
             {
+                Debug.Log("Hit obj in UIActionManager: " + hit.collider.name);
                 switch (hit.collider.gameObject.name)
                 {
                     case "Jungle Rodent":
@@ -189,6 +193,10 @@ public class UIActionManager : MonoBehaviour
                         break;
                     case "Kerosene Lamp":
                         charTalkText.TextUpdate("It's a kerosene lamp! Seems to have a little bit of kerosene left.");
+                        charTalkText.isTextEnabled = true;
+                        break;
+                    case "Spiral Design":
+                        charTalkText.TextUpdate("It's a sprial design. I need something to eat the tarnish to pick it up.");
                         charTalkText.isTextEnabled = true;
                         break;
                     default:
@@ -217,6 +225,10 @@ public class UIActionManager : MonoBehaviour
                         charTalkText.TextUpdate("It's a kerosene lamp! Seem to have a little bit of kerosene left.");
                         charTalkText.isTextEnabled = true;
                     }
+                    break;
+                case "Plato's Lost Dialog":
+                    charTalkText.TextUpdate("It's Plato's Lost Dialog.");
+                    charTalkText.isTextEnabled = true;
                     break;
                 default:
                     break;
@@ -342,9 +354,10 @@ public class UIActionManager : MonoBehaviour
         isActionSelected = true;
     }
 
-    public void DoAction_Pull()
+    public void DoAction_Pull(GameObject clickedObj)
     {
-
+        if (clickedObj.name == "Animal Head w/Spiral Down")
+            animalHeads.SwapObjects();
     }
 
     #endregion
