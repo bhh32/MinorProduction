@@ -19,6 +19,8 @@ public class Teleporter : MonoBehaviour
     [SerializeField] GameObject clearingCam;
     [SerializeField] GameObject insideCam;
 
+    [SerializeField] GameObject cameraFade;
+
     // Checking for collision with object to be teleported
 	void OnTriggerEnter(Collider other)
     {
@@ -35,10 +37,12 @@ public class Teleporter : MonoBehaviour
 				case "Jungle Entrance":
                     indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(jungleEntranceMovePoint.transform.position);
+                    cameraFade.SetActive(true);
 					break;
 				case "Cave Entrance":
                     indyAgent.Warp(teleportLocation.transform.position);
 					indyAgent.SetDestination(caveEntranceMovePoint.transform.position);
+                    cameraFade.SetActive(true);
 					break;
 				case "Cave Exit":
                     indyAgent.Warp(teleportLocation.transform.position);

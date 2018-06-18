@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour {
     Vector3 moveDirection;
 
     [SerializeField] IndyAnimController indyAnim;
-    [SerializeField] Rigidbody rb;
 
     public bool canTeleport = true;
 	
