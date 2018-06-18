@@ -24,8 +24,9 @@ public class Teleporter : MonoBehaviour
     [Header("Cameras")]
     [SerializeField] GameObject clearingCam;
     [SerializeField] GameObject insideCam;
-
+	
     [Header("Teleportation Delay"), SerializeField] float teleportDelay;
+    [SerializeField] GameObject cameraFade;
 
     // Checking for collision with object to be teleported
 	void OnTriggerEnter(Collider other)
@@ -42,9 +43,11 @@ public class Teleporter : MonoBehaviour
 			{
                 case "Jungle Entrance":
                     StartCoroutine(TeleportDelay(teleportDelay, jungleEntranceMovePoint));
+					cameraFade.SetActive(true);
 					break;
                 case "Cave Entrance":
                     StartCoroutine(TeleportDelay(teleportDelay, caveEntranceMovePoint));
+					cameraFade.SetActive(true);
 					break;
                 case "Cave Exit":
                     StartCoroutine(TeleportDelay(teleportDelay, caveExitMovePoint));

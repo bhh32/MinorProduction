@@ -3063,6 +3063,7 @@ GameObject:
   - component: {fileID: 114852635985403866}
   - component: {fileID: 114125216236178390}
   - component: {fileID: 114228481133959364}
+  - component: {fileID: 114417889464128648}
   m_Layer: 0
   m_Name: Indy Speech Canvas
   m_TagString: Untagged
@@ -11175,7 +11176,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 1
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 4265242476872694}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
