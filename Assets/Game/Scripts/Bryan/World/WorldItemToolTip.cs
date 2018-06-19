@@ -40,11 +40,11 @@ public class WorldItemToolTip : MonoBehaviour
                     toolTip.enabled = false;
                     break;
             }
-        }
 
-        if (hit.collider.gameObject != null)
-        {
-            toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
+            if (hit.collider.gameObject != null)
+            {
+                toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
+            }
         }
     }
 }
