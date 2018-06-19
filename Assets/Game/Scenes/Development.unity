@@ -20862,8 +20862,8 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
-  teleportDelay: 0
-  cameraFade: {fileID: 0}
+  teleportDelay: 1
+  cameraFade: {fileID: 262835962}
 --- !u!23 &870376113
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33978,8 +33978,8 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
-  teleportDelay: 0
-  cameraFade: {fileID: 0}
+  teleportDelay: 1
+  cameraFade: {fileID: 262835962}
 --- !u!23 &1187408501
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34117,7 +34117,7 @@ PlayableDirector:
     - 9f07a6ecbe932f146964930f5c33b988: {fileID: 1704674188}
 --- !u!1 &1211538995
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 1035340560906552, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -34136,7 +34136,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &1211538996
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 4728454201037992, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -34150,7 +34150,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1211538997
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114294790295328992, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -34170,7 +34170,7 @@ MonoBehaviour:
   m_RollDamping: 0
 --- !u!114 &1211538998
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114793164264456682, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -34195,7 +34195,7 @@ MonoBehaviour:
   m_BiasY: 0
 --- !u!114 &1211538999
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114595076755749730, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -44822,7 +44822,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 1
-  m_LookAt: {fileID: 1958395311}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1958395311}
   m_Lens:
     FieldOfView: 40
@@ -47873,7 +47873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 4
   m_FollowOffset: {x: 0, y: 1.72, z: -15.19}
-  m_XDamping: 2.18
+  m_XDamping: 0.45
   m_YDamping: 2.64
   m_ZDamping: 0
   m_PitchDamping: 0
