@@ -24,6 +24,7 @@ public class Teleporter : MonoBehaviour
     [Header("Cameras")]
     [SerializeField] GameObject clearingCam;
     [SerializeField] GameObject insideCam;
+    [SerializeField] GameObject mainGameCam;
 	
     [Header("Teleportation Delay"), SerializeField] float teleportDelay;
     [SerializeField] GameObject cameraFade;
@@ -67,13 +68,18 @@ public class Teleporter : MonoBehaviour
                 case "Inside Temple WarpTo Location":
                     if (DialogSystemManager.instance.isSecondComplete)
                     {
-                        StartCoroutine(CameraSwapDelay(teleportDelay, insideCam, clearingCam));
+                        //StartCoroutine(CameraSwapDelay(teleportDelay, insideCam, clearingCam));
                         StartCoroutine(TeleportDelay(teleportDelay, insideTempleMovePoint));
+                        clearingCam.SetActive(false);
+                        insideCam.SetActive(true);                        
                     }
                     break;
                 case "Clearing WarpTo Location":
-                    StartCoroutine(CameraSwapDelay(teleportDelay, clearingCam, insideCam));
+                    //StartCoroutine(CameraSwapDelay(teleportDelay, clearingCam, insideCam));
                     StartCoroutine(TeleportDelay(teleportDelay, clearingMovePoint));
+                    mainGameCam.SetActive(false);
+                    insideCam.SetActive(false);
+                    clearingCam.SetActive(true);
                     break;
 				default:
 					Debug.LogError("Something went wrong with teleporting!" + gameObject.name);
