@@ -25,16 +25,19 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        float horizontalMovement = Input.GetAxisRaw("Horizontal") * walkspeed * Time.deltaTime;
-        float verticalMovement = Input.GetAxisRaw("Vertical") * walkspeed * Time.deltaTime;
-
-        indyAnim.WalkAnim();
-        moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement);
-
-        if (horizontalMovement != 0f || verticalMovement != 0f)
+        if (UIActionManager.instance.canWalk)
         {
-            Rotate();
-            Move();
+            float horizontalMovement = Input.GetAxisRaw("Horizontal") * walkspeed * Time.deltaTime;
+            float verticalMovement = Input.GetAxisRaw("Vertical") * walkspeed * Time.deltaTime;
+
+            indyAnim.WalkAnim();
+            moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement);
+
+            if (horizontalMovement != 0f || verticalMovement != 0f)
+            {
+                Rotate();
+                Move();
+            }
         }
     }
 

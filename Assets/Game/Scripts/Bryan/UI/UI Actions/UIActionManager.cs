@@ -14,6 +14,7 @@ public class UIActionManager : MonoBehaviour
     {
         instance = this;
         actionSelectionCanvas.SetActive(false);
+        canWalk = true;
     }
 
     #endregion
@@ -40,6 +41,9 @@ public class UIActionManager : MonoBehaviour
 
     [Header("Animal Head Object Change Script")]
     [SerializeField] ChangeObjects animalHeads;
+
+    [Header("Snake Prop")]
+    [SerializeField] GameObject snakeProp;
 	
     #endregion
 
@@ -73,7 +77,11 @@ public class UIActionManager : MonoBehaviour
     void LateUpdate()
     {
         if (Input.GetMouseButtonUp(0))
+        {
             actionSelectionCanvas.SetActive(false);
+            if (!canWalk)
+                canWalk = true;
+        }
     }
 
     #region Walk Action Methods
@@ -258,6 +266,22 @@ public class UIActionManager : MonoBehaviour
             if (InventoryUseItem.instance.currentItem != null)
             {
                 InventoryUseItem.instance.Use(thingObjUsedOn);
+            }
+            else
+            {
+                switch (thingObjUsedOn.name)
+                {
+                    case "SnakeProp":
+                        if (!snakeProp.activeSelf)
+                        {
+                            UIActionManager.instance.canWalk = false;
+                            // Trigger Cutscene animation
+                        }
+                        break;
+                    default:
+                        Debug.Log("Can't Be Used.");
+                        break;
+                }
             }
         }
         else

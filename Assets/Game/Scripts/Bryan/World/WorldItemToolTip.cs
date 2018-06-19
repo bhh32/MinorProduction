@@ -8,6 +8,7 @@ public class WorldItemToolTip : MonoBehaviour
     [SerializeField] TMP_Text toolTip;
 
     Vector3 offset;
+    RaycastHit hit;
 
     void Awake()
     {
@@ -20,15 +21,15 @@ public class WorldItemToolTip : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            switch(hit.collider.name)
+            switch (hit.collider.name)
             {
+                
                 case "Jungle Rodent":
                 case "Kerosene Lamp":
                 case "env_exterior_snaketree_lowpoly":
@@ -41,6 +42,9 @@ public class WorldItemToolTip : MonoBehaviour
             }
         }
 
-        toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
-	}
+        if (hit.collider.gameObject != null)
+        {
+            toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
+        }
+    }
 }
