@@ -47,6 +47,11 @@ public class WorldItemUse : MonoBehaviour
 
                         action.canUse = false;
                     }
+                    else if (gameObject.name == "SnakeTree")
+                    {
+                        action.UseSnakeTree();
+                        action.canUse = false;
+                    }
                 }
                 // Check if the current action is LookAt...
                 else if (action.canLookAt)

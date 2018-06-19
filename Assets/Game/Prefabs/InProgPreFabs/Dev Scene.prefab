@@ -3536,7 +3536,7 @@ GameObject:
   - component: {fileID: 114377766764750498}
   - component: {fileID: 64385636216140792}
   m_Layer: 0
-  m_Name: env_exterior_snaketree_lowpoly
+  m_Name: SnakeTree
   m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

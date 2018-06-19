@@ -267,26 +267,21 @@ public class UIActionManager : MonoBehaviour
             {
                 InventoryUseItem.instance.Use(thingObjUsedOn);
             }
-            else
-            {
-                switch (thingObjUsedOn.name)
-                {
-                    case "SnakeProp":
-                        if (!snakeProp.activeSelf)
-                        {
-                            UIActionManager.instance.canWalk = false;
-                            // Trigger Cutscene animation
-                        }
-                        break;
-                    default:
-                        Debug.Log("Can't Be Used.");
-                        break;
-                }
-            }
         }
         else
             Debug.Log("canUse is false!");
 	}
+
+    public void UseSnakeTree()
+    {
+        if (!snakeProp.activeSelf)
+        {
+            UIActionManager.instance.canWalk = false;
+            // charTalkText.gameObject.SetActive(false);
+            charTalkText.GetComponent<NavMeshAgent>().Warp(new Vector3(24.07f, 18.91f, -7.95f));
+            // Trigger Cut Scene
+        }
+    }
 
     #endregion
 
