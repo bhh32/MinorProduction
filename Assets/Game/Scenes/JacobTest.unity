@@ -13077,7 +13077,7 @@ Transform:
   - {fileID: 1119680942}
   - {fileID: 1852958630}
   m_Father: {fileID: 1186714433}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &596730514
 PlayableDirector:
@@ -42355,8 +42355,8 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
-  teleportDelay: 0
-  cameraFade: {fileID: 1464454574}
+  teleportDelay: 1
+  cameraFade: {fileID: 1374500976}
 --- !u!23 &1113339098
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43454,6 +43454,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1374500977}
   - {fileID: 596730513}
   - {fileID: 2133732376}
   m_Father: {fileID: 1532720669}
@@ -45429,6 +45430,68 @@ Transform:
   m_Father: {fileID: 561507125}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1374500976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1135848349337656, guid: 3080812f41f478e449800e5095e7dd3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1374500977}
+  - component: {fileID: 1374500978}
+  m_Layer: 0
+  m_Name: CameraFade (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1374500977
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4607839970778510, guid: 3080812f41f478e449800e5095e7dd3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1374500976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1186714433}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1374500978
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 320766715885181910, guid: 3080812f41f478e449800e5095e7dd3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1374500976}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b88292a9f8d945f4eac7fbc3a9c0f723, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 1383137107}
+  - key: {fileID: 114102293820388084, guid: 770b5fcca9eefdc458ddc9d8770b0bca, type: 2}
+    value: {fileID: 1383137107}
+  - key: {fileID: 0}
+    value: {fileID: 1383137107}
+  - key: {fileID: 0}
+    value: {fileID: 1383137107}
+  - key: {fileID: 114134222082995440, guid: b88292a9f8d945f4eac7fbc3a9c0f723, type: 2}
+    value: {fileID: 1383137107}
+  - key: {fileID: 114347269691354222, guid: b88292a9f8d945f4eac7fbc3a9c0f723, type: 2}
+    value: {fileID: 1383137107}
+  - key: {fileID: 114893386051795044, guid: b88292a9f8d945f4eac7fbc3a9c0f723, type: 2}
+    value: {fileID: 1374500976}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1376377954
 GameObject:
   m_ObjectHideFlags: 0
@@ -51401,14 +51464,14 @@ MonoBehaviour:
   m_CollideAgainst:
     serializedVersion: 2
     m_Bits: 1
-  m_IgnoreTag: 
+  m_IgnoreTag: CamIgnore
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_CameraRadius: 0.1
   m_Strategy: 1
   m_MaximumEffort: 4
-  m_Damping: 0
+  m_Damping: 1.5
   m_OptimalTargetDistance: 0
 --- !u!1 &1565399381
 GameObject:
@@ -71235,6 +71298,11 @@ Prefab:
       propertyPath: m_SceneBindings.Array.data[5].value
       value: 
       objectReference: {fileID: 1383137107}
+    - target: {fileID: 114302115384373198, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: cameraFade
+      value: 
+      objectReference: {fileID: 1532720668}
     - target: {fileID: 114048808563992304, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_LookAt
@@ -78555,8 +78623,8 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
-  teleportDelay: 0
-  cameraFade: {fileID: 1464454574}
+  teleportDelay: 1
+  cameraFade: {fileID: 1374500976}
 --- !u!23 &1946743956
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83693,7 +83761,7 @@ Transform:
   m_Children:
   - {fileID: 617586940}
   m_Father: {fileID: 1186714433}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &2133732377
 PlayableDirector:
