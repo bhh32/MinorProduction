@@ -266,6 +266,7 @@ public class UIActionManager : MonoBehaviour
             if (InventoryUseItem.instance.currentItem != null)
             {
                 InventoryUseItem.instance.Use(thingObjUsedOn);
+                canUse = false;
             }
         }
         else
