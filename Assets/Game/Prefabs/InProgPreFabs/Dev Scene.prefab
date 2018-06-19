@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 64108082969738676}
   m_Layer: 0
   m_Name: env_tree_lowpoly
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 64195482908075602}
   m_Layer: 0
   m_Name: env_tree_lowpoly (1)
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 114487331339545116}
   m_Layer: 0
   m_Name: SnakeProp
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2153,7 +2153,7 @@ GameObject:
   - component: {fileID: 64001108654500032}
   m_Layer: 0
   m_Name: Fern1
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2718,7 +2718,7 @@ GameObject:
   - component: {fileID: 64524486249662406}
   m_Layer: 0
   m_Name: Fern1
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3081,7 +3081,7 @@ GameObject:
   - component: {fileID: 114228481133959364}
   m_Layer: 0
   m_Name: Indy Speech Canvas
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3546,7 +3546,7 @@ GameObject:
   - component: {fileID: 114377766764750498}
   m_Layer: 0
   m_Name: env_exterior_snaketree_lowpoly
-  m_TagString: Untagged
+  m_TagString: CamIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11166,14 +11166,14 @@ MonoBehaviour:
   m_CollideAgainst:
     serializedVersion: 2
     m_Bits: 1
-  m_IgnoreTag: 
+  m_IgnoreTag: CamIgnore
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
   m_CameraRadius: 0.1
   m_Strategy: 1
   m_MaximumEffort: 4
-  m_Damping: 0
+  m_Damping: 1.5
   m_OptimalTargetDistance: 0
 --- !u!114 &114097014463489070
 MonoBehaviour:
@@ -12494,11 +12494,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -15289,7 +15289,7 @@ MonoBehaviour:
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
   teleportDelay: 0
-  cameraFade: {fileID: 0}
+  cameraFade: {fileID: 1135848349337656}
 --- !u!114 &114829343974383698
 MonoBehaviour:
   m_ObjectHideFlags: 1
