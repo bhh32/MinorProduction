@@ -68,7 +68,14 @@ public class Teleporter : MonoBehaviour
                 case "Inside Temple WarpTo Location":
                     if (DialogSystemManager.instance.isSecondComplete)
                     {
-                        //StartCoroutine(CameraSwapDelay(teleportDelay, insideCam, clearingCam));
+                        var newSophia = GameObject.FindGameObjectWithTag("Temple Sophia").GetComponent<CharacterTalkText>();
+                        var newSternhart = GameObject.FindGameObjectWithTag("Temple Sternhart").GetComponent<CharacterTalkText>();
+
+                        if (DialogSystemManager.instance.sophia != newSophia)
+                            DialogSystemManager.instance.sophia = newSophia;
+                        if (DialogSystemManager.instance.sternhart != newSternhart)
+                            DialogSystemManager.instance.sternhart = newSternhart;
+                        
                         StartCoroutine(TeleportDelay(teleportDelay, insideTempleMovePoint));
                         clearingCam.SetActive(false);
                         insideCam.SetActive(true);                        
