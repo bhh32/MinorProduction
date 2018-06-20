@@ -11,6 +11,10 @@ TagManager:
   - Fire
   - Indy
   - CamIgnore
+  - Animal Head
+  - Indy Cut Scene Model
+  - Temple Sternhart
+  - Temple Sophia
   layers:
   - Default
   - TransparentFX

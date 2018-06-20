@@ -30,8 +30,8 @@ public class DialogSystemManager : MonoBehaviour
 
     [Header("Character Speech")]
     [SerializeField] CharacterTalkText indy;
-    [SerializeField] CharacterTalkText sophia;
-    [SerializeField] CharacterTalkText sternhart;
+    public CharacterTalkText sophia;
+    public CharacterTalkText sternhart;
     [SerializeField] CharacterTalkText parrot;
 
     public bool firstEncounter = true;
