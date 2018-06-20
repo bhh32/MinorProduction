@@ -77,6 +77,7 @@ public class Teleporter : MonoBehaviour
                             DialogSystemManager.instance.sternhart = newSternhart;
                         
                         StartCoroutine(TeleportDelay(teleportDelay, insideTempleMovePoint));
+                        cameraFade.SetActive(true);
                         clearingCam.SetActive(false);
                         insideCam.SetActive(true);                        
                     }
@@ -85,6 +86,7 @@ public class Teleporter : MonoBehaviour
                     //StartCoroutine(CameraSwapDelay(teleportDelay, clearingCam, insideCam));
                     StartCoroutine(TeleportDelay(teleportDelay, clearingMovePoint));
                     mainGameCam.SetActive(false);
+                    cameraFade.SetActive(true);
                     insideCam.SetActive(false);
                     clearingCam.SetActive(true);
                     break;

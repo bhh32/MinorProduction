@@ -21,9 +21,9 @@ MonoBehaviour:
     m_To: CM InsideTempleCam
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 1
   - m_From: CM InsideTempleCam
     m_To: CM OutsideTempleCam
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 1

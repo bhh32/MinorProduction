@@ -1303,23 +1303,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.025977183
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9996626
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -54.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 21.099998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748560573511694, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -23.47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23394751437839978, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
@@ -1384,6 +1384,16 @@ Prefab:
     - target: {fileID: 114726612166919178, guid: 3080812f41f478e449800e5095e7dd3c,
         type: 2}
       propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114991415759905692, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: teleportDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114473792890912412, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: teleportDelay
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
