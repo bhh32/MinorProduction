@@ -37,6 +37,7 @@ public class UIActionManager : MonoBehaviour
     //[SerializeField] Text speechText;
     [SerializeField] CharacterTalkText charTalkText;
      public bool isTalking = false;
+    [SerializeField] IndyAnimController indyAnim;
     [SerializeField] GameObject currentSelectedCharacter;
 
     [Header("Animal Head Object Change Script")]
@@ -377,7 +378,10 @@ public class UIActionManager : MonoBehaviour
     public void DoAction_Pull(GameObject clickedObj)
     {
         if (clickedObj.name == "Animal Head w/Spiral Down")
+        {
+            indyAnim.PullAnim();
             animalHeads.SwapObjects();
+        }
     }
 
     #endregion

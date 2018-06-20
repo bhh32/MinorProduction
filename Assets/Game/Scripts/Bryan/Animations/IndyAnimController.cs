@@ -23,4 +23,10 @@ public class IndyAnimController : MonoBehaviour
             anim.SetBool("isWalking", false);
         }
     }
+
+    public void PullAnim()
+    {
+        anim.SetBool("isPulling", true);
+        anim.SetBool("isPulling", false);
+    }
 }
