@@ -84,9 +84,9 @@ public class Teleporter : MonoBehaviour
                     break;
                 case "Clearing WarpTo Location":
                     //StartCoroutine(CameraSwapDelay(teleportDelay, clearingCam, insideCam));
+                    cameraFade.SetActive(true);
                     StartCoroutine(TeleportDelay(teleportDelay, clearingMovePoint));
                     mainGameCam.SetActive(false);
-                    cameraFade.SetActive(true);
                     insideCam.SetActive(false);
                     clearingCam.SetActive(true);
                     break;
