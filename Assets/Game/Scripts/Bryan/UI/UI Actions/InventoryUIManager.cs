@@ -14,6 +14,8 @@ public class InventoryUIManager : MonoBehaviour
     public List<Button> inventorySlots = new List<Button>();
     [SerializeField] List<Image> inventoryImages = new List<Image>();
     [SerializeField] Sprite defaultSprite;
+
+    [Header("Iventory Toggle")]
     [SerializeField] Toggle inventoryToggle;
     #endregion
 
