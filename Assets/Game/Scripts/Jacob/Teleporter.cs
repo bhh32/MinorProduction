@@ -77,12 +77,14 @@ public class Teleporter : MonoBehaviour
                             DialogSystemManager.instance.sternhart = newSternhart;
                         
                         StartCoroutine(TeleportDelay(teleportDelay, insideTempleMovePoint));
+                        cameraFade.SetActive(true);
                         clearingCam.SetActive(false);
                         insideCam.SetActive(true);                        
                     }
                     break;
                 case "Clearing WarpTo Location":
                     //StartCoroutine(CameraSwapDelay(teleportDelay, clearingCam, insideCam));
+                    cameraFade.SetActive(true);
                     StartCoroutine(TeleportDelay(teleportDelay, clearingMovePoint));
                     mainGameCam.SetActive(false);
                     insideCam.SetActive(false);
