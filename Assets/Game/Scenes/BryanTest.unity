@@ -489,6 +489,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 0.5
   cameraFade: {fileID: 1539120364}
 --- !u!23 &29989561
@@ -5163,6 +5164,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 0
   cameraFade: {fileID: 1539120364}
 --- !u!23 &142481738
@@ -5337,6 +5339,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 1
   cameraFade: {fileID: 1539120364}
 --- !u!23 &151712519
@@ -9605,7 +9608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 266, y: -0.6000366}
+  m_AnchoredPosition: {x: 75.50003, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277944463
@@ -10642,6 +10645,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 939125005}
   insideCam: {fileID: 1262823865}
+  mainGameCam: {fileID: 0}
   teleportDelay: 3
   cameraFade: {fileID: 1539120364}
 --- !u!23 &369501419
@@ -11354,6 +11358,7 @@ MonoBehaviour:
   indyAgent: {fileID: 1523265952}
   clearingCam: {fileID: 939125005}
   insideCam: {fileID: 1262823865}
+  mainGameCam: {fileID: 0}
   teleportDelay: 3
   cameraFade: {fileID: 1539120364}
 --- !u!65 &449843728
@@ -11519,6 +11524,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 0
   cameraFade: {fileID: 1539120364}
 --- !u!23 &475890755
@@ -12209,8 +12215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffed427299cc2a140acd102bf3599719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realIndy: {fileID: 1744981001}
-  warpPosition: {fileID: 207207082}
 --- !u!23 &543305081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13040,7 +13044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd775848161d624eb1e08dc08274f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indy: {fileID: 1744980991}
 --- !u!114 &615255015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13292,6 +13295,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 0
   cameraFade: {fileID: 1539120364}
 --- !u!23 &642763765
@@ -14407,7 +14411,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -14427,9 +14431,9 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1009837474}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -18810,7 +18814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106.80008, y: -0.6000366}
+  m_AnchoredPosition: {x: -83.69989, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &862857347
@@ -20283,7 +20287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 424.8001, y: -0.6000366}
+  m_AnchoredPosition: {x: 234.30014, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998160467
@@ -20884,8 +20888,8 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009837470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.025977183, y: -0, z: -0, w: 0.9996626}
+  m_LocalPosition: {x: -54.34, y: 21.099998, z: -23.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1385890549}
@@ -31332,6 +31336,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 1
   cameraFade: {fileID: 1539120364}
 --- !u!23 &1371713927
@@ -33301,6 +33306,7 @@ MonoBehaviour:
   canOpen: 0
   charTalkText: {fileID: 1744980993}
   isTalking: 0
+  indyAnim: {fileID: 0}
   currentSelectedCharacter: {fileID: 0}
   animalHeads: {fileID: 1013776016}
   snakeProp: {fileID: 100870358}
@@ -34324,7 +34330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.099998, y: -0.6000366}
+  m_AnchoredPosition: {x: -163.39996, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636993866
@@ -42890,7 +42896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 345.20007, y: -0.6000366}
+  m_AnchoredPosition: {x: 154.7001, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765237569
@@ -44584,7 +44590,7 @@ RectTransform:
   m_GameObject: {fileID: 1867694525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72585, y: 0.72585, z: 0.72585}
   m_Children:
   - {fileID: 2108028871}
   m_Father: {fileID: 740829470}
@@ -44592,7 +44598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429, y: -322}
+  m_AnchoredPosition: {x: -333.4, y: -176.2}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867694527
@@ -52749,6 +52755,7 @@ MonoBehaviour:
   indyAgent: {fileID: 0}
   clearingCam: {fileID: 0}
   insideCam: {fileID: 0}
+  mainGameCam: {fileID: 0}
   teleportDelay: 0.5
   cameraFade: {fileID: 1539120364}
 --- !u!23 &2030374891
@@ -52889,7 +52896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.5, y: -0.6000366}
+  m_AnchoredPosition: {x: -243, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044699273
@@ -53357,7 +53364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 186.7, y: -0.6000366}
+  m_AnchoredPosition: {x: -3.7999725, y: -0.6000366}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099030853
