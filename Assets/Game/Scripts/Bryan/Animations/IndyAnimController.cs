@@ -34,6 +34,10 @@ public class IndyAnimController : MonoBehaviour
             else
                 anim.SetBool("isWalking", false);
         }
+        if (!UIActionManager.instance.canWalk)
+        {
+            anim.SetBool("isWalking", false);
+        }
     }
 
     public void PullAnim()

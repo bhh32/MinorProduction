@@ -39,6 +39,10 @@ public class PlayerController : MonoBehaviour {
                 Move();
             }
         }
+        else
+        {
+            indyAnim.WalkAnim();
+        }
     }
 
     void Move()

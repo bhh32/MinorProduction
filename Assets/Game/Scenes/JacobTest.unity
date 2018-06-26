@@ -17363,7 +17363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &365615391
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -17401,7 +17401,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365615390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.21066, y: 8.371702, z: 8.592606}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -23542,7 +23542,7 @@ GameObject:
   m_PrefabInternal: {fileID: 2103942821}
 --- !u!1 &523741355
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 1035340560906552, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -23561,7 +23561,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &523741356
 Transform:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 4728454201037992, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -23575,7 +23575,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &523741357
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114294790295328992, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -23595,7 +23595,7 @@ MonoBehaviour:
   m_RollDamping: 0
 --- !u!114 &523741358
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114793164264456682, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -23620,7 +23620,7 @@ MonoBehaviour:
   m_BiasY: 0
 --- !u!114 &523741359
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 114595076755749730, guid: 3080812f41f478e449800e5095e7dd3c,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -61442,6 +61442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1022555341}
   rb: {fileID: 1022555340}
+  agent: {fileID: 0}
 --- !u!114 &1022555337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70501,6 +70502,7 @@ GameObject:
   - component: {fileID: 1117475537}
   - component: {fileID: 1117475536}
   - component: {fileID: 1117475535}
+  - component: {fileID: 1117475541}
   - component: {fileID: 1117475534}
   - component: {fileID: 1117475533}
   - component: {fileID: 1117475532}
@@ -70525,6 +70527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1117475538}
   rb: {fileID: 1117475536}
+  agent: {fileID: 1117475535}
 --- !u!114 &1117475533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70568,7 +70571,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -70722,6 +70725,20 @@ Transform:
   m_Father: {fileID: 464011889}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1117475541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1117475531}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a5aef27da580a4eb28ba739e440063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animation: {fileID: 1117475532}
+  agent: {fileID: 1117475535}
+  canTeleport: 1
 --- !u!1 &1119680941
 GameObject:
   m_ObjectHideFlags: 0
@@ -75861,6 +75878,8 @@ PlayableDirector:
     value: {fileID: 762778042}
   - key: {fileID: 0}
     value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - f48b299da3a15e749a9abbb19c511bad: {fileID: 785834521}
@@ -76223,6 +76242,7 @@ MonoBehaviour:
   actionSelectionCanvas: {fileID: 1406590370}
   actionSelectionButtons: {fileID: 1065927254}
   isActionSelected: 0
+  canWalk: 0
   canUse: 0
   canOpen: 0
   charTalkText: {fileID: 0}
@@ -78888,6 +78908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryToggle: {fileID: 1275046542}
+  toggleState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
   anim: {fileID: 1723318009}
   toggleDefault: {fileID: 21300000, guid: 7ecfcdbb0ab258c4aab5cfd9f422de6e, type: 3}
   toggleDefaultHighlight: {fileID: 21300000, guid: 784e9a403b541494d862e8f814545e5d,
@@ -79539,6 +79563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryToggle: {fileID: 1670956157}
+  toggleState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
   anim: {fileID: 1851153852}
   toggleDefault: {fileID: 0}
   toggleDefaultHighlight: {fileID: 0}
@@ -104589,11 +104617,12 @@ MonoBehaviour:
   actionSelectionCanvas: {fileID: 2093171313}
   actionSelectionButtons: {fileID: 724582367}
   isActionSelected: 0
+  canWalk: 0
   canUse: 0
   canOpen: 0
-  charTalkText: {fileID: 0}
+  charTalkText: {fileID: 1117475533}
   isTalking: 0
-  indyAnim: {fileID: 0}
+  indyAnim: {fileID: 1117475532}
   currentSelectedCharacter: {fileID: 0}
   animalHeads: {fileID: 0}
   snakeProp: {fileID: 0}
