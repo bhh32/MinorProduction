@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 9d6acfc3496ecf547b194d6654a91869
+timeCreated: 1529969019
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: env_exterior_snaketree_lowpoly
+    100002: //RootNode
+    100004: snake
+    100006: Snake_Bottom_Jaw
+    100008: Snake_Bottom_Jaw_END
+    100010: Snake_Center
+    100012: Snake_Head
+    100014: Snake_Head_END
+    100016: Snake_Neck_01
+    100018: Snake_Neck_02
+    100020: Snake_Neck_03
+    100022: Snake_Neck_04
+    100024: Snake_Root
+    100026: Snake_Tail_01
+    100028: Snake_Tail_02
+    100030: Snake_Tail_03
+    100032: Snake_Tail_04
+    100034: Snake_Tail_05
+    100036: Snake_Top_Jaw
+    100038: Snake_Top_Jaw_END
+    400000: env_exterior_snaketree_lowpoly
+    400002: //RootNode
+    400004: snake
+    400006: Snake_Bottom_Jaw
+    400008: Snake_Bottom_Jaw_END
+    400010: Snake_Center
+    400012: Snake_Head
+    400014: Snake_Head_END
+    400016: Snake_Neck_01
+    400018: Snake_Neck_02
+    400020: Snake_Neck_03
+    400022: Snake_Neck_04
+    400024: Snake_Root
+    400026: Snake_Tail_01
+    400028: Snake_Tail_02
+    400030: Snake_Tail_03
+    400032: Snake_Tail_04
+    400034: Snake_Tail_05
+    400036: Snake_Top_Jaw
+    400038: Snake_Top_Jaw_END
+    2100000: lambert2
+    2100002: blinn3
+    2300000: env_exterior_snaketree_lowpoly
+    3300000: env_exterior_snaketree_lowpoly
+    4300000: env_exterior_snaketree_lowpoly
+    4300002: snake
+    9500000: //RootNode
+    13700000: snake
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

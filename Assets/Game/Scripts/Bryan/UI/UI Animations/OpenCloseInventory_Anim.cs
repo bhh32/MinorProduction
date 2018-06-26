@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OpenCloseInventory_Anim : MonoBehaviour 
 {
     [SerializeField] Toggle	inventoryToggle;
+    [SerializeField] SpriteState toggleState;
     [SerializeField] Animator anim;
 
     [SerializeField] Sprite toggleDefault;
@@ -13,23 +14,37 @@ public class OpenCloseInventory_Anim : MonoBehaviour
     [SerializeField] Sprite toggleOpen;
     [SerializeField] Sprite toggleOpenHighlight;
 
+    void FixedUpdate()
+    {
+        toggleState = inventoryToggle.spriteState;
+
+        if (inventoryToggle.isOn)
+        {
+            inventoryToggle.image.sprite = toggleDefault;
+            toggleState.highlightedSprite = toggleDefaultHighlight;
+        }
+        else
+        {
+            inventoryToggle.image.sprite = toggleOpen;
+            toggleState.highlightedSprite = toggleOpenHighlight;
+        }
+
+        inventoryToggle.spriteState = toggleState;
+    }
+
     public void OpenClose()
     {
-        var spriteState = inventoryToggle.spriteState;
-
         if (inventoryToggle.isOn)
         {
             anim.SetBool("isOpening", false);
             anim.SetBool("isClosing", true);
-            inventoryToggle.image.sprite = toggleOpen;
-            spriteState.highlightedSprite = toggleOpenHighlight;
+
         }
         else
         {
             anim.SetBool("isOpening", true);
             anim.SetBool("isClosing", false);
-            inventoryToggle.image.sprite = toggleDefault;
-            spriteState.highlightedSprite = toggleDefaultHighlight;
+
         }
     }
 }
