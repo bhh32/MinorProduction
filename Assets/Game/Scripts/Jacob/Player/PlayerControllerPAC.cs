@@ -20,13 +20,26 @@ public class PlayerControllerPAC : MonoBehaviour
 
     //Player NavMesh
     [SerializeField] NavMeshAgent agent;
+    //Players Rigidbody
+    Rigidbody rb;
 
     public bool canTeleport = true;
 
-    //Gets NavMesh
     void Start()
     {
-        //agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        //Always updating to get the players current velocity
+        Vector3 v3Velocity = rb.velocity;
+        //checks to see if the players has stopped moving
+        if (v3Velocity.x < 0.1f && v3Velocity.y < 0.1f && v3Velocity.z < 0.1f)
+        {
+            //if the player has stopped moving, update the animation controller
+            animation.WalkAnim();
+        }
     }
 
     //void Update()
