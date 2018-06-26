@@ -527,7 +527,20 @@ public class UIActionManager : MonoBehaviour
         switch (clickedCharacter.name)
         {
             case "Sternhart":
-                DialogSystemManager.instance.DisableOtherUI();
+                if (!DialogSystemManager.instance.isSecondComplete && DialogSystemManager.instance.firstEncounter)
+                {
+                    DialogSystemManager.instance.StartDialog();
+                    DialogSystemManager.instance.DisableOtherUI();
+                }
+                else if (!DialogSystemManager.instance.isSecondComplete)
+                {
+                    DialogSystemManager.instance.DisableOtherUI();
+                }
+                else
+                {
+                    DialogSystemManager.instance.UpdateToSternhartThirdPuzzleChoices();
+                    DialogSystemManager.instance.DisableOtherUI();
+                }
                 break;
             case "Parrot":
                 DialogSystemManager.instance.UpdateToParrotChoices();
@@ -543,11 +556,10 @@ public class UIActionManager : MonoBehaviour
                 {
                     DialogSystemManager.instance.UpdateToDefaultSophiaChoices();
                     DialogSystemManager.instance.DisableOtherUI();
-
                 }                    
                 break;
             default:
-                Debug.LogError("Something went wrong with talking!");
+                Debug.LogError("Something went wrong with talking in the action manager!");
                 break;
         }
 

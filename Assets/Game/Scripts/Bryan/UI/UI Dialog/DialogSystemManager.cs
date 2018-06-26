@@ -69,6 +69,29 @@ public class DialogSystemManager : MonoBehaviour
             ThirdPuzzleDialogChoices();
     }
 
+    public void CasualDialogChoices()
+    {
+        switch (currentChoice.text)
+        {
+            case "What do we do now?":
+                UpdateIndy();
+                UpdateSophia("I don't know, keep looking around I guess.", 1f);
+                EndEncounter();
+                break;
+            case "Let's keep looking.":
+                UpdateIndy();
+                UpdateSophia("Ok.", 1f);
+                EndEncounter();
+                break;
+            case "":
+                break;
+            default:
+                Debug.LogError("Something went wrong in CasualDialogChoices()");
+                break;
+                
+        }
+    }
+
     #endregion
 
     #region Puzzle Dialog Systems
@@ -275,7 +298,7 @@ public class DialogSystemManager : MonoBehaviour
                 break;
             default:
                 if (currentChoice.text != "")
-                    Debug.LogError("Something went wrong in the second puzzle dialog system!");
+                    CasualDialogChoices();
                 break;
         }
     }
@@ -304,9 +327,23 @@ public class DialogSystemManager : MonoBehaviour
 
                 EndEncounter();
                 break;
+            case "Can I have your lamp?":
+                UpdateIndy();
+                UpdateSternhart("No! Unless you give me $50.", 2f);
+                UpdateIndy("Fifty dollars! No thanks.", 3f);
+                break;
+            case "What've you found here?":
+                UpdateIndy();
+                UpdateSternhart("Not really a whole lot... YET!", 2f);
+                break;
+            case "I'd like to look around.":
+                UpdateIndy();
+                UpdateSternhart("Ok.", 1f);
+                EndEncounter();
+                break;
             default:
                 if (currentChoice.text != "")
-                    Debug.LogError("Something went wrong with the third puzzle dialog system.");
+                    CasualDialogChoices();
                 break;
         }
     }
@@ -336,6 +373,14 @@ public class DialogSystemManager : MonoBehaviour
         newChoices[0].text = "What do we do now?";
         newChoices[1].text = "Let's keep looking.";
         newChoices[2].text = "";
+        newChoices[3].text = "";
+    }
+
+    public void UpdateToSternhartThirdPuzzleChoices()
+    {
+        newChoices[0].text = "Can I have your lamp?";
+        newChoices[1].text = "What've you found in here?";
+        newChoices[2].text = "I'd like to look around.";
         newChoices[3].text = "";
     }
 
