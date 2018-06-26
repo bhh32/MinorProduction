@@ -9,29 +9,30 @@ public class IndyAnimController : MonoBehaviour
     [SerializeField] Rigidbody rb;
     [SerializeField] NavMeshAgent agent;
 
-    void Update()
-    {
-        Debug.Log(agent.remainingDistance);
-    }
     public void WalkAnim()
     {
-        if (Input.GetAxis("Horizontal") != 0f)
+        if (!agent.isActiveAndEnabled)
         {
-            anim.SetBool("isWalking", true);
-        }
-        if (Input.GetAxis("Vertical") != 0f)
-        {
-            anim.SetBool("isWalking", true);
-        }
+            if (Input.GetAxis("Horizontal") != 0f)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            if (Input.GetAxis("Vertical") != 0f)
+            {
+                anim.SetBool("isWalking", true);
+            }
 
-        if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f && agent.remainingDistance <= .5f)
-        {
-            anim.SetBool("isWalking", false);
+            if (Input.GetAxis("Horizontal") == 0f && Input.GetAxis("Vertical") == 0f)
+            {
+                anim.SetBool("isWalking", false);
+            }
         }
-
-        if (agent.remainingDistance > 0f)
+        else
         {
-            anim.SetBool("isWalking", true);
+            if (agent.remainingDistance > 0f)
+                anim.SetBool("isWalking", true);
+            else
+                anim.SetBool("isWalking", false);
         }
     }
 

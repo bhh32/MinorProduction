@@ -50,7 +50,7 @@ public class UIActionManager : MonoBehaviour
 
 	void Update () 
 	{
-        if (!isTalking)
+        if (!isTalking && canWalk)
         {
             Vector3 clickPosition = Input.mousePosition;
     
