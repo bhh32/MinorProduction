@@ -12,6 +12,8 @@ public class RodentDeath : MonoBehaviour
     //This is where the normal camera will be stored.
     public GameObject mainCamera;
 
+
+
     //checks for a trigger
     void OnTriggerEnter(Collider other)
     {

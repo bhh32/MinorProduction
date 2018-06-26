@@ -13,8 +13,10 @@ public class DestroyRodent : MonoBehaviour
     {
         RodentAI.instance.OnWhipped -= TriggerRodentCutscene;
         Destroy(rodent.gameObject, 0.5f);
+
         rodentCutscene.SetActive(true);
         Destroy(rodentToolTip);
+
         Destroy(gameObject);
     }
 

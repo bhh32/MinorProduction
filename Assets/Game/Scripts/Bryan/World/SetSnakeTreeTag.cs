@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class SetSnakeTreeTag : MonoBehaviour 
 {
+    [SerializeField] GameObject snakeProp;
     [SerializeField] GameObject snakeTree;
 
-    void Awake()
+    void Update()
     {
-        if (snakeTree.name == "Snake Tree")
-            snakeTree.name = "Cleared Tree";
+        if (!snakeProp.activeInHierarchy)
+        {
+            if (snakeTree.name == "Snake Tree")
+            {
+                snakeTree.name = "Cleared Tree";
+                gameObject.SetActive(false);
+            }
+        }
     }
 }
