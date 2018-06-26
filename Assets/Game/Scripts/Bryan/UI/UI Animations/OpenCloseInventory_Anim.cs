@@ -38,13 +38,11 @@ public class OpenCloseInventory_Anim : MonoBehaviour
         {
             anim.SetBool("isOpening", false);
             anim.SetBool("isClosing", true);
-
         }
         else
         {
             anim.SetBool("isOpening", true);
             anim.SetBool("isClosing", false);
-
         }
     }
 }

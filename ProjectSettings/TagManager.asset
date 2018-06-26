@@ -15,6 +15,11 @@ TagManager:
   - Indy Cut Scene Model
   - Temple Sternhart
   - Temple Sophia
+  - Snake Tree
+  - Sternhart
+  - Torch
+  - Parrot
+  - Jeep
   layers:
   - Default
   - TransparentFX

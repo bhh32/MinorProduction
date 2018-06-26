@@ -331,6 +331,14 @@ public class DialogSystemManager : MonoBehaviour
         newChoices[3].text = "";
     }
 
+    public void UpdateToDefaultSophiaChoices()
+    {
+        newChoices[0].text = "What do we do now?";
+        newChoices[1].text = "Let's keep looking.";
+        newChoices[2].text = "";
+        newChoices[3].text = "";
+    }
+
     public void StartDialog()
     {
         newChoices[0].text = "No thanks, Mr... ?";

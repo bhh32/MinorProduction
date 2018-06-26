@@ -14,9 +14,9 @@ public class SetControls : MonoBehaviour
 
     void Awake()
     {
-        if (ControlsManager.instance != null || debugPacBool)
+        if (ControlsManager.instance != null)
         {
-            if (ControlsManager.instance.isPointAndClick || debugPacBool)
+            if (ControlsManager.instance.isPointAndClick)
             {
                 indyAgent.enabled = true;
                 indyRB.useGravity = false;
@@ -32,6 +32,23 @@ public class SetControls : MonoBehaviour
                 wasd.enabled = true;
                 pointAndClick.enabled = false;
             }
+        }
+        // Remove the else - else if statement for production, debug checks and testing only
+        else if (debugPacBool)
+        {
+            indyAgent.enabled = true;
+            indyRB.useGravity = false;
+            indyRB.isKinematic = true;
+            wasd.enabled = false;
+            pointAndClick.enabled = true;
+        }
+        else
+        {
+            indyAgent.enabled = false;
+            indyRB.useGravity = true;
+            indyRB.isKinematic = false;
+            wasd.enabled = true;
+            pointAndClick.enabled = false;
         }
     }
 }

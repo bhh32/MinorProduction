@@ -47,7 +47,7 @@ public class WorldItemUse : MonoBehaviour
 
                         action.canUse = false;
                     }
-                    else if (gameObject.name == "SnakeTree")
+                    else if (gameObject.name == "Cleared Tree")
                     {
                         action.UseSnakeTree();
                         action.canUse = false;
