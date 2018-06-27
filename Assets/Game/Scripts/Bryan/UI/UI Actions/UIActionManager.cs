@@ -399,6 +399,11 @@ public class UIActionManager : MonoBehaviour
             // charTalkText.gameObject.SetActive(false);
             charTalkText.GetComponent<NavMeshAgent>().Warp(new Vector3(24.07f, 18.91f, -7.95f));
             // Trigger Cut Scene
+
+            GameObject.Find("Sophia").GetComponent<NavMeshAgent>().Warp(new Vector3(41.83f, 17.19f,-21.39f));
+
+            GameObject.Find("Sophia").GetComponent<HumanFollow>().IsFollowing = true;
+            GameObject.Find("Sophia").SetActive(true);
         }
     }
 

@@ -1400,7 +1400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2956d3efdd70be44bb113c90d2924f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlsToggle: {fileID: 729505695}
+  controlsToggle: {fileID: 0}
+  toggle: {fileID: 0}
   isPointAndClick: 0
 --- !u!4 &1617770155
 Transform:

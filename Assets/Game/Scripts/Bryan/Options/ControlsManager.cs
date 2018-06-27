@@ -14,22 +14,33 @@ public class ControlsManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-
-        controlsToggle = GameObject.Find("Point And Click Toggle");
-        toggle = controlsToggle.GetComponent<Toggle>();
     }
 
     #endregion
 
     [SerializeField] GameObject controlsToggle;
-    Toggle toggle;
+    [SerializeField] Toggle toggle;
     public bool isPointAndClick = false;
+
+    void FixedUpdate()
+    {
+        // Puts the control toggle into the cached variable if it exists
+        // if it doesn't then the gameobject is destroyed.
+        if (controlsToggle == null)
+        {
+            controlsToggle = GameObject.Find("Point And Click Toggle");
+
+            if (controlsToggle == null)
+                Destroy(gameObject);
+
+            toggle = controlsToggle.GetComponent<Toggle>();
+        }
+    }
 
     void Update()
     {
