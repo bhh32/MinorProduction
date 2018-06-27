@@ -20,16 +20,20 @@ public class ControlsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        controlsToggle = GameObject.Find("Point And Click Toggle");
+        toggle = controlsToggle.GetComponent<Toggle>();
     }
 
     #endregion
 
-    [SerializeField] Toggle controlsToggle;
+    [SerializeField] GameObject controlsToggle;
+    Toggle toggle;
     public bool isPointAndClick = false;
 
     void Update()
     {
-        if (controlsToggle.isOn)
+        if (toggle.isOn)
             isPointAndClick = true;
         else
             isPointAndClick = false;

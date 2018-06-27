@@ -12,13 +12,11 @@ public class MainMenu_Button : MonoBehaviour, IPointerClickHandler, IPointerEnte
         switch (gameObject.name)
         {
             case "Play":
+                DontDestroyOnLoad(ControlsManager.instance.gameObject);
                 SceneManager.LoadScene("Development");
                 break;
-            case "Options":
-                // Deactivate Main Menu Canvas and Activate Options Canvas
-                break;
             case "Credits":
-                // Deactivate Main Menu Canvas and Activate Credits Menu
+                SceneManager.LoadScene("Credits");
                 break;
             case "Quit Game":
                 Application.Quit();
