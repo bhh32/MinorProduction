@@ -37,7 +37,7 @@ public class Teleporter : MonoBehaviour
 		{
 			// Ensure there isn't a teleport loop...
 			PlayerController.instance.canTeleport = false;
-            indyAgent = other.GetComponent<NavMeshAgent>();
+            //indyAgent = other.GetComponent<NavMeshAgent>();
 			
 
 			switch(teleportLocation.name)
@@ -71,6 +71,9 @@ public class Teleporter : MonoBehaviour
                         var sophiaAgent = GameObject.Find("Sophia").GetComponent<NavMeshAgent>();
                         sophiaAgent.Warp(new Vector3(161.9f, 15f, -70.3f));
                         sophiaAgent.SetDestination(new Vector3(171.91f, 15f, -83.05f));
+                        var sternhartAgent = GameObject.Find("Sternhart").GetComponent<NavMeshAgent>();
+                        sternhartAgent.Warp(new Vector3(161.9f, 15f, -70.3f));
+                        sternhartAgent.SetDestination(new Vector3(171.91f, 15f, -83.05f));
                         
                         StartCoroutine(TeleportDelay(teleportDelay, insideTempleMovePoint));
                         cameraFade.SetActive(true);
