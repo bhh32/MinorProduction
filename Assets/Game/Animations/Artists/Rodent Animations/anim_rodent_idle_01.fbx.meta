@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 4f413df82d2048445897ee92ff919075
+timeCreated: 1530121958
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rodent
+    100004: Rodent_Head
+    100006: Rodent_Head_END
+    100008: Rodent_Hip
+    100010: Rodent_L_Ankle
+    100012: Rodent_L_Arm_END
+    100014: Rodent_L_Clavical
+    100016: Rodent_L_Elbow
+    100018: Rodent_L_Foot
+    100020: Rodent_L_Knee
+    100022: Rodent_L_Leg_END
+    100024: Rodent_L_Paw
+    100026: Rodent_L_Shoulder
+    100028: Rodent_L_Thigh
+    100030: Rodent_L_Wrist
+    100032: Rodent_Neck
+    100034: Rodent_R_Ankle
+    100036: Rodent_R_Arm_END
+    100038: Rodent_R_Clavical
+    100040: Rodent_R_Elbow
+    100042: Rodent_R_Foot
+    100044: Rodent_R_Knee
+    100046: Rodent_R_Leg_END
+    100048: Rodent_R_Paw
+    100050: Rodent_R_Shoulder
+    100052: Rodent_R_Thigh
+    100054: Rodent_R_Wrist
+    100056: Rodent_Spine
+    100058: Rodent_Tailbone
+    100060: Rodent_Tailbone_END
+    100062: Root
+    400000: //RootNode
+    400002: rodent
+    400004: Rodent_Head
+    400006: Rodent_Head_END
+    400008: Rodent_Hip
+    400010: Rodent_L_Ankle
+    400012: Rodent_L_Arm_END
+    400014: Rodent_L_Clavical
+    400016: Rodent_L_Elbow
+    400018: Rodent_L_Foot
+    400020: Rodent_L_Knee
+    400022: Rodent_L_Leg_END
+    400024: Rodent_L_Paw
+    400026: Rodent_L_Shoulder
+    400028: Rodent_L_Thigh
+    400030: Rodent_L_Wrist
+    400032: Rodent_Neck
+    400034: Rodent_R_Ankle
+    400036: Rodent_R_Arm_END
+    400038: Rodent_R_Clavical
+    400040: Rodent_R_Elbow
+    400042: Rodent_R_Foot
+    400044: Rodent_R_Knee
+    400046: Rodent_R_Leg_END
+    400048: Rodent_R_Paw
+    400050: Rodent_R_Shoulder
+    400052: Rodent_R_Thigh
+    400054: Rodent_R_Wrist
+    400056: Rodent_Spine
+    400058: Rodent_Tailbone
+    400060: Rodent_Tailbone_END
+    400062: Root
+    2100000: blinn1
+    4300000: rodent
+    7400000: RodentIdle
+    9500000: //RootNode
+    13700000: rodent
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RodentIdle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 94
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
