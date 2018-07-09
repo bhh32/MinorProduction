@@ -37,13 +37,15 @@ public class WorldItemToolTip : MonoBehaviour
                     toolTip.enabled = true;
                     break;
                 default:
-                    toolTip.enabled = false;
+                    if(toolTip != null)
+                        toolTip.enabled = false;
                     break;
             }
 
             if (hit.collider.gameObject != null)
             {
-                toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
+                if(toolTip != null)
+                    toolTip.transform.position = new Vector3(transform.position.x, transform.position.y - offset.y, transform.position.z);
             }
         }
     }
