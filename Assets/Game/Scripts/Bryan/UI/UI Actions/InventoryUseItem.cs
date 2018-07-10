@@ -24,7 +24,6 @@ public class InventoryUseItem : MonoBehaviour
     {
         if (currentItem != null)
         {
-            Debug.Log(currentItem.name);
             switch (currentItem.name)
             {
                 case "Whip":

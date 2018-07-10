@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: f9ae72f1809d7774eb6b465cdc64bfde
+timeCreated: 1531183587
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: arm_R_elbo_R
+    100002: arm_R_elbo_R 1
+    100004: arm_R_shoulder_R
+    100006: arm_R_shoulder_R 1
+    100008: arm_R_wrist_R
+    100010: arm_R_wrist_R 1
+    100012: bicep_roll
+    100014: bicep_roll 1
+    100016: center
+    100018: collarbone_L_
+    100020: collarbone_R_
+    100022: collarbone_R_1
+    100024: core_bellybutton
+    100026: core_chest_lowrib
+    100028: core_chest_nips
+    100030: core_collarbone
+    100032: eye_base
+    100034: eye_base1
+    100036: eye_L_END
+    100038: eye_R_END
+    100040: forearm_roll
+    100042: forearm_roll 1
+    100044: hat
+    100046: hip_L
+    100048: hip_L_knee
+    100050: hip_L_knee_L_ancle
+    100052: hip_L_knee_L_ancle_L_foot
+    100054: hip_L_knee_L_ancle_L_foot_END
+    100056: hip_R
+    100058: hip_R_knee
+    100060: hip_R_knee_R_ancle
+    100062: hip_R_knee_R_ancle_R_foot
+    100064: hip_R_knee_R_ancle_R_foot_END
+    100066: hip_top
+    100068: index_R
+    100070: index_R 1
+    100072: index_R_2
+    100074: index_R_2 1
+    100076: index_R_2 2
+    100078: index_R_2 3
+    100080: index_R_END
+    100082: index_R_END 1
+    100084: Indi
+    100086: //RootNode
+    100088: middle_R
+    100090: middle_R 1
+    100092: middle_R_2
+    100094: middle_R_2 1
+    100096: middle_R_3
+    100098: middle_R_3 1
+    100100: middle_R_END
+    100102: middle_R_END 1
+    100104: neck_1
+    100106: neck_2
+    100108: pinkie_R
+    100110: pinkie_R 1
+    100112: pinkie_R_2
+    100114: pinkie_R_2 1
+    100116: pinkie_R_3
+    100118: pinkie_R_3 1
+    100120: pinkie_R_END
+    100122: pinkie_R_END 1
+    100124: pointer_R
+    100126: pointer_R 1
+    100128: pointer_R_2
+    100130: pointer_R_2 1
+    100132: pointer_R_3
+    100134: pointer_R_3 1
+    100136: pointer_R_END
+    100138: pointer_R_END 1
+    100140: polySurface3
+    100142: rig_mesh
+    100144: thumb_R
+    100146: thumb_R 1
+    100148: thumb_R_2
+    100150: thumb_R_2 1
+    100152: thumb_R_END
+    100154: thumb_R_END 1
+    100156: thy_roll
+    100158: thy_roll 1
+    400000: arm_R_elbo_R
+    400002: arm_R_elbo_R 1
+    400004: arm_R_shoulder_R
+    400006: arm_R_shoulder_R 1
+    400008: arm_R_wrist_R
+    400010: arm_R_wrist_R 1
+    400012: bicep_roll
+    400014: bicep_roll 1
+    400016: center
+    400018: collarbone_L_
+    400020: collarbone_R_
+    400022: collarbone_R_1
+    400024: core_bellybutton
+    400026: core_chest_lowrib
+    400028: core_chest_nips
+    400030: core_collarbone
+    400032: eye_base
+    400034: eye_base1
+    400036: eye_L_END
+    400038: eye_R_END
+    400040: forearm_roll
+    400042: forearm_roll 1
+    400044: hat
+    400046: hip_L
+    400048: hip_L_knee
+    400050: hip_L_knee_L_ancle
+    400052: hip_L_knee_L_ancle_L_foot
+    400054: hip_L_knee_L_ancle_L_foot_END
+    400056: hip_R
+    400058: hip_R_knee
+    400060: hip_R_knee_R_ancle
+    400062: hip_R_knee_R_ancle_R_foot
+    400064: hip_R_knee_R_ancle_R_foot_END
+    400066: hip_top
+    400068: index_R
+    400070: index_R 1
+    400072: index_R_2
+    400074: index_R_2 1
+    400076: index_R_2 2
+    400078: index_R_2 3
+    400080: index_R_END
+    400082: index_R_END 1
+    400084: Indi
+    400086: //RootNode
+    400088: middle_R
+    400090: middle_R 1
+    400092: middle_R_2
+    400094: middle_R_2 1
+    400096: middle_R_3
+    400098: middle_R_3 1
+    400100: middle_R_END
+    400102: middle_R_END 1
+    400104: neck_1
+    400106: neck_2
+    400108: pinkie_R
+    400110: pinkie_R 1
+    400112: pinkie_R_2
+    400114: pinkie_R_2 1
+    400116: pinkie_R_3
+    400118: pinkie_R_3 1
+    400120: pinkie_R_END
+    400122: pinkie_R_END 1
+    400124: pointer_R
+    400126: pointer_R 1
+    400128: pointer_R_2
+    400130: pointer_R_2 1
+    400132: pointer_R_3
+    400134: pointer_R_3 1
+    400136: pointer_R_END
+    400138: pointer_R_END 1
+    400140: polySurface3
+    400142: rig_mesh
+    400144: thumb_R
+    400146: thumb_R 1
+    400148: thumb_R_2
+    400150: thumb_R_2 1
+    400152: thumb_R_END
+    400154: thumb_R_END 1
+    400156: thy_roll
+    400158: thy_roll 1
+    2100000: lambert2
+    2100002: lambert5
+    2300000: hat
+    3300000: hat
+    4300000: polySurface3
+    4300002: hat
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: polySurface3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

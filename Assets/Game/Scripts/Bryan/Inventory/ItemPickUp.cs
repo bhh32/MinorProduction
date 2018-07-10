@@ -66,8 +66,8 @@ public class ItemPickUp : MonoBehaviour
                             }
                             else
                             {
-                                // Do Sternhart Animation to interrupt indy from picking up the lamp.
-                                Debug.Log("Sternhart comes out to stop Indy from taking lamp.");
+                                indy.TextUpdate("I can't steal it! Well... unless I need to...");
+                                indy.isTextEnabled = true;
                             }
                             break;
                         default:

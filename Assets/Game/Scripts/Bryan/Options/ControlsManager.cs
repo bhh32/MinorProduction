@@ -25,6 +25,9 @@ public class ControlsManager : MonoBehaviour
     #endregion
 
     [SerializeField] Toggle toggle;
+    [SerializeField] Sprite defaultImg;
+    [SerializeField] Sprite wasdImg;
+
     [SerializeField] TMP_Text movementText;
     public bool isPointAndClick = false;
 
@@ -65,6 +68,7 @@ public class ControlsManager : MonoBehaviour
         if (toggle.isOn)
         {
             isPointAndClick = true;
+            toggle.image.sprite = defaultImg;
             Text toggleLable = toggle.GetComponentInChildren<Text>();
             toggleLable.text = "Point And Click Controls Enabled";
             movementText.text = "Left Mouse Click (When Action Not Selected) - Walk";
@@ -72,6 +76,7 @@ public class ControlsManager : MonoBehaviour
         else
         {
             isPointAndClick = false;
+            toggle.image.sprite = wasdImg;
             Text toggleLable = toggle.GetComponentInChildren<Text>();
             toggleLable.text = "WASD Controls Enabled";
             movementText.text = "WASD - Walk";
