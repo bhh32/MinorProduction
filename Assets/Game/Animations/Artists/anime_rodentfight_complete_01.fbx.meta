@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 7e776ffb617a38a45881400c2404eb9a
+timeCreated: 1531245071
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: env_exterior_snaketree_lowpoly
+    100004: rodent
+    100006: Rodent_Head
+    100008: Rodent_Head_END
+    100010: Rodent_Hip
+    100012: Rodent_L_Ankle
+    100014: Rodent_L_Arm_END
+    100016: Rodent_L_Clavical
+    100018: Rodent_L_Elbow
+    100020: Rodent_L_Foot
+    100022: Rodent_L_Knee
+    100024: Rodent_L_Leg_END
+    100026: Rodent_L_Paw
+    100028: Rodent_L_Shoulder
+    100030: Rodent_L_Thigh
+    100032: Rodent_L_Wrist
+    100034: Rodent_Neck
+    100036: Rodent_R_Ankle
+    100038: Rodent_R_Arm_END
+    100040: Rodent_R_Clavical
+    100042: Rodent_R_Elbow
+    100044: Rodent_R_Foot
+    100046: Rodent_R_Knee
+    100048: Rodent_R_Leg_END
+    100050: Rodent_R_Paw
+    100052: Rodent_R_Shoulder
+    100054: Rodent_R_Thigh
+    100056: Rodent_R_Wrist
+    100058: Rodent_Spine
+    100060: Rodent_Tailbone
+    100062: Rodent_Tailbone_END
+    100064: Root
+    100066: snake
+    100068: Snake_Bottom_Jaw
+    100070: Snake_Bottom_Jaw_END
+    100072: Snake_Center
+    100074: Snake_Head
+    100076: Snake_Head_END
+    100078: Snake_Neck_01
+    100080: Snake_Neck_02
+    100082: Snake_Neck_03
+    100084: Snake_Neck_04
+    100086: Snake_Root
+    100088: Snake_Tail_01
+    100090: Snake_Tail_02
+    100092: Snake_Tail_03
+    100094: Snake_Tail_04
+    100096: Snake_Tail_05
+    100098: Snake_Top_Jaw
+    100100: Snake_Top_Jaw_END
+    400000: //RootNode
+    400002: env_exterior_snaketree_lowpoly
+    400004: rodent
+    400006: Rodent_Head
+    400008: Rodent_Head_END
+    400010: Rodent_Hip
+    400012: Rodent_L_Ankle
+    400014: Rodent_L_Arm_END
+    400016: Rodent_L_Clavical
+    400018: Rodent_L_Elbow
+    400020: Rodent_L_Foot
+    400022: Rodent_L_Knee
+    400024: Rodent_L_Leg_END
+    400026: Rodent_L_Paw
+    400028: Rodent_L_Shoulder
+    400030: Rodent_L_Thigh
+    400032: Rodent_L_Wrist
+    400034: Rodent_Neck
+    400036: Rodent_R_Ankle
+    400038: Rodent_R_Arm_END
+    400040: Rodent_R_Clavical
+    400042: Rodent_R_Elbow
+    400044: Rodent_R_Foot
+    400046: Rodent_R_Knee
+    400048: Rodent_R_Leg_END
+    400050: Rodent_R_Paw
+    400052: Rodent_R_Shoulder
+    400054: Rodent_R_Thigh
+    400056: Rodent_R_Wrist
+    400058: Rodent_Spine
+    400060: Rodent_Tailbone
+    400062: Rodent_Tailbone_END
+    400064: Root
+    400066: snake
+    400068: Snake_Bottom_Jaw
+    400070: Snake_Bottom_Jaw_END
+    400072: Snake_Center
+    400074: Snake_Head
+    400076: Snake_Head_END
+    400078: Snake_Neck_01
+    400080: Snake_Neck_02
+    400082: Snake_Neck_03
+    400084: Snake_Neck_04
+    400086: Snake_Root
+    400088: Snake_Tail_01
+    400090: Snake_Tail_02
+    400092: Snake_Tail_03
+    400094: Snake_Tail_04
+    400096: Snake_Tail_05
+    400098: Snake_Top_Jaw
+    400100: Snake_Top_Jaw_END
+    2100000: lambert2
+    2100002: blinn3
+    2100004: blinn4
+    2300000: env_exterior_snaketree_lowpoly
+    3300000: env_exterior_snaketree_lowpoly
+    4300000: env_exterior_snaketree_lowpoly
+    4300002: snake
+    4300004: rodent
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: rodent
+    13700002: snake
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
