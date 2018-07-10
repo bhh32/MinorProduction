@@ -44,8 +44,9 @@ public class UIActionManager : MonoBehaviour
     [Header("Animal Head Object Change Script")]
     [SerializeField] ChangeObjects animalHeads;
 
-    [Header("Snake Prop")]
+    [Header("Snake Cut Scene")]
     [SerializeField] GameObject snakeProp;
+    [SerializeField] GameObject treeCutScene;
 	
     #endregion
 
@@ -111,7 +112,7 @@ public class UIActionManager : MonoBehaviour
             actionSelectionCanvas.SetActive(false);
 
             // ... then, check if all of the action bools are false...
-            if (AreAllBools(false))
+            if (AreAllBools(false) && !treeCutScene.activeSelf)
                 canWalk = true; // ... if they are set canWalk to true.
         }
     }
@@ -398,8 +399,11 @@ public class UIActionManager : MonoBehaviour
             UIActionManager.instance.canWalk = false;
             // charTalkText.gameObject.SetActive(false);
             charTalkText.GetComponent<NavMeshAgent>().Warp(new Vector3(24.07f, 18.91f, -7.95f));
-            // Trigger Cut Scene
 
+            // Trigger Cut Scene
+            treeCutScene.SetActive(true);
+
+            // Warp the characters to their specific positions
             GameObject.Find("Sophia").GetComponent<NavMeshAgent>().Warp(new Vector3(41.83f, 17.19f,-21.39f));
 
             GameObject.Find("Sophia").GetComponent<HumanFollow>().IsFollowing = true;
