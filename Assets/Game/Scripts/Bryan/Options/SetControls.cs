@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
 
 public class SetControls : MonoBehaviour 
 {
@@ -9,6 +11,14 @@ public class SetControls : MonoBehaviour
     [SerializeField] Rigidbody indyRB;
     [SerializeField] PlayerController wasd;
     [SerializeField] PlayerControllerPAC pointAndClick;
+
+    [Header("Action Manager UI Changes")]
+    [SerializeField] Image walk_CancelButton;
+    [SerializeField] Sprite walkSprite;
+    [SerializeField] Sprite cancelSprite;
+    [SerializeField] Sprite cancelHoverSprite;
+    [SerializeField] Sprite cancelPressedSprite;
+    [SerializeField] TMP_Text cancelWalkText;
 
     [SerializeField] bool debugPacBool = false;
 
@@ -23,6 +33,8 @@ public class SetControls : MonoBehaviour
                 indyRB.isKinematic = true;
                 wasd.enabled = false;
                 pointAndClick.enabled = true;
+                walk_CancelButton.sprite = walkSprite;
+                cancelWalkText.text = "Walk";
             }
             else
             {
@@ -31,6 +43,12 @@ public class SetControls : MonoBehaviour
                 indyRB.isKinematic = false;
                 wasd.enabled = true;
                 pointAndClick.enabled = false;
+                walk_CancelButton.sprite = cancelSprite;
+                SpriteState cancelState = walk_CancelButton.GetComponent<Button>().spriteState;
+                cancelState.highlightedSprite = cancelHoverSprite;
+                cancelState.pressedSprite = cancelPressedSprite;
+                walk_CancelButton.GetComponent<Button>().spriteState = cancelState;
+                cancelWalkText.text = "Cancel";
             }
         }
         // Remove the else - else if statement for production, debug checks and testing only
