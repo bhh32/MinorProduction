@@ -398,16 +398,24 @@ public class UIActionManager : MonoBehaviour
         {
             UIActionManager.instance.canWalk = false;
             // charTalkText.gameObject.SetActive(false);
-            charTalkText.GetComponent<NavMeshAgent>().Warp(new Vector3(24.07f, 18.91f, -7.95f));
+            charTalkText.GetComponent<NavMeshAgent>().Warp(new Vector3(17.016f, 18.119f, -4.999f));
+            charTalkText.transform.Rotate(0f, 121.493f, 0f);
+            charTalkText.gameObject.SetActive(false);
 
             // Trigger Cut Scene
             treeCutScene.SetActive(true);
 
             // Warp the characters to their specific positions
-            GameObject.Find("Sophia").GetComponent<NavMeshAgent>().Warp(new Vector3(41.83f, 17.19f,-21.39f));
+            var sophia = GameObject.Find("Sophia");
+            sophia.GetComponent<NavMeshAgent>().Warp(new Vector3(20.722f, 18.41f,-6.984f));
+            sophia.transform.Rotate(0f, 219.629f, 0f);
+            sophia.GetComponent<HumanFollow>().IsFollowing = true;
+            sophia.SetActive(false);
 
-            GameObject.Find("Sophia").GetComponent<HumanFollow>().IsFollowing = true;
-            GameObject.Find("Sophia").SetActive(true);
+            var sternhart = GameObject.Find("Sternhart");
+            sternhart.GetComponent<NavMeshAgent>().Warp(new Vector3(20.72f, 19.341f, -1.747f));
+            sternhart.transform.Rotate(0f, 207.839f, 0f);
+            sternhart.SetActive(false);
         }
     }
 
