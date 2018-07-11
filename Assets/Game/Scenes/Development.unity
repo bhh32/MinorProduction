@@ -43601,7 +43601,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115229023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -84452,6 +84452,15 @@ Prefab:
       propertyPath: toTempleTransition
       value: 
       objectReference: {fileID: 83900827}
+    - target: {fileID: 4025992255042420, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 23146060256754518, guid: 3080812f41f478e449800e5095e7dd3c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3080812f41f478e449800e5095e7dd3c, type: 2}
   m_IsPrefabParent: 0
@@ -94991,7 +95000,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1904606883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
