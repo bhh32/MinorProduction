@@ -40,6 +40,8 @@ public class DialogSystemManager : MonoBehaviour
     public bool isSecondComplete = false;
     public bool isOccupied { get; private set; }
 
+    [SerializeField] GameObject toTempleTransition;
+
     #endregion
 
     void Start()
@@ -433,8 +435,6 @@ public class DialogSystemManager : MonoBehaviour
     void UpdateSternhart(string newText,float delay)
     {
         DoDelayedText(sternhart, newText, delay);
-//        sternhart.TextUpdate(newText);
-//        sternhart.isTextEnabled = true;
     }
 
     void UpdateSophia(string newText, float delay)
@@ -465,6 +465,11 @@ public class DialogSystemManager : MonoBehaviour
 
     void EndEncounter()
     {
+        if (currentChoice.text == "The Hermocrates.")
+        {
+            toTempleTransition.SetActive(true);
+        }
+
         UIActionManager.instance.isTalking = false;
         dialogCanvas.SetActive(false);
         Cursor.visible = true;
