@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db307423daa8ebe428a8c6e0398ff71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 30
+  delay: 15
   fadeImage: {fileID: 215872218}
   fadeImageAnim: {fileID: 215872220}
 --- !u!1 &1220604803

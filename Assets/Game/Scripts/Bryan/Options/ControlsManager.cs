@@ -71,7 +71,7 @@ public class ControlsManager : MonoBehaviour
             toggle.image.sprite = defaultImg;
             Text toggleLable = toggle.GetComponentInChildren<Text>();
             toggleLable.text = "Point And Click Controls Enabled";
-            movementText.text = "Left Mouse Click (When Action Not Selected) - Walk";
+            movementText.text = "Left Click (When Action Not Selected) - Walk";
         }
         else
         {

@@ -47,11 +47,15 @@ public class UIActionManager : MonoBehaviour
     [Header("Snake Cut Scene")]
     [SerializeField] GameObject snakeProp;
     [SerializeField] GameObject treeCutScene;
+
+    [Header("End Cut Scene")]
+    [SerializeField] GameObject endCutScene;
 	
     #endregion
 
 	void Update () 
 	{
+        
         // If the dialog system isn't on AND canWalk is true...
         if (!isTalking && canWalk)
         {
@@ -142,7 +146,7 @@ public class UIActionManager : MonoBehaviour
         // If the pointer is over a UI element return out of this method
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        
+
         // Check if canWalk is true and the left mouse button was clicked
         if (canWalk && Input.GetMouseButtonDown(0))
 		{
@@ -519,6 +523,10 @@ public class UIActionManager : MonoBehaviour
         {
             indyAnim.PullAnim();
             animalHeads.SwapObjects();
+            indyAnim.gameObject.SetActive(false);
+            GameObject.Find("Sophia").SetActive(false);
+            GameObject.Find("Sternhart").SetActive(false);
+            endCutScene.SetActive(true);
         }
         else
         {

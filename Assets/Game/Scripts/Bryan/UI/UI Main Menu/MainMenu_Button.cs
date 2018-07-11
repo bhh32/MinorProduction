@@ -18,7 +18,7 @@ public class MainMenu_Button : MonoBehaviour, IPointerClickHandler, IPointerEnte
             case "Credits":
                 SceneManager.LoadScene("Credits");
                 break;
-            case "Quit Game":
+            case "Quit":
                 Application.Quit();
                 break;
             default:

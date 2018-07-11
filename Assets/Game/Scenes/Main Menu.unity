@@ -236,7 +236,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -61.721916, y: 0, z: -46.29148, w: -10.68264}
+  m_margin: {x: -103.847404, y: 0, z: -67.67663, w: -10.68264}
   m_textInfo:
     textComponent: {fileID: 209723350}
     characterCount: 65
@@ -244,7 +244,7 @@ MonoBehaviour:
     spaceCount: 10
     wordCount: 11
     linkCount: 0
-    lineCount: 4
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -1692,7 +1692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 67.79999}
+  m_AnchoredPosition: {x: 0, y: 76.60846}
   m_SizeDelta: {x: 371.7, y: 67.79999}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1733408070
