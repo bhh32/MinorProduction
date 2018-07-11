@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 
 public class DialogSystemManager : MonoBehaviour
@@ -468,6 +469,22 @@ public class DialogSystemManager : MonoBehaviour
         if (currentChoice.text == "The Hermocrates.")
         {
             toTempleTransition.SetActive(true);
+
+            var indyAgent = indy.GetComponent<NavMeshAgent>();
+            indyAgent.Warp(new Vector3(160.6526f, 15.35716f, -74.86929f));
+
+            if (indyAgent.enabled)
+                indyAgent.SetDestination(new Vector3(163.42f, 15.67f, -75.42f));
+
+            var sophiaAgent = sophia.GetComponent<NavMeshAgent>();
+            sophiaAgent.Warp(new Vector3(161.9f, 15f, -70.3f));
+            sophiaAgent.SetDestination(new Vector3(171.91f, 15f, -83.05f));
+
+            sophia.GetComponent<HumanFollow>().isFollowing = false;
+
+            var sternhartAgent = sternhart.GetComponent<NavMeshAgent>();
+            sternhartAgent.Warp(new Vector3(161.9f, 15f, -70.3f));
+            sternhartAgent.SetDestination(new Vector3(171.91f, 15f, -83.05f));
         }
 
         UIActionManager.instance.isTalking = false;
